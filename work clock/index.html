@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Jim+Nightshade" rel="stylesheet">
+</head>
+
+<body>
+
+ <div class="container">
+  <div class="row" id="row1">
+  <div class="col-md-4" id="start-time">
+  <div class="title-small">Start Time (Use format: "H:M"):</div>
+  <input id="start-input">
+  <button onclick="startTime()" class="submit" class="btn btn-default">Submit</button>
+  </div>
+  <div class="col-md-4" id="hour-rate">
+  <div class="title-small">Hour Rate:</div> 
+  <input id="hour-rate-input">  
+  <button onclick="hourRate()" class="submit">Submit</button>
+  </div>
+  <div class="col-md-4" id="expected-end-time">
+  <div class="title-small">End Time (Use format: "H:M"):</div>
+  <input id="expected-end-time-input">  
+  <button onclick="remainingTime()" class="submit">Submit</button>
+  </div>
+  </div> <!--row-->
+  
+  <div class="row" id="row2">
+  <div class="col-md-3">
+  <div class="title-small">Current Time:</div>
+  <div id="current-time-box">
+  <div id="current-time">
+  </div>
+  </div>
+  </div>
+  <div class="col-md-6" id="time-remaining-large">
+   <div class="title-small">Time Remaining:</div>
+    <div id="time-remaining-box">
+  <div id="time-remaining">
+  </div>
+  </div>
+  </div>
+  <div class="col-md-3" id="expected-end-time">
+   <div class="title-small">Elapsed Time:</div>
+    <div id="elapsed-time-box">
+  <div id="elapsed-time">
+  </div>
+  </div>
+  </div>
+  </div> <!--row2-->
+
+  
+  <div class="row" id="row3">
+  <div class="col-md-2">
+ 
+  </div>
+  <div class="col-md-8" id="hour-rate">
+   <div class="title-small">You earned today:</div>
+  <div id="earnings-box">
+  <div id="earnings">
+  </div>
+  </div>
+   
+  </div>
+  <div class="col-md-2" id="expected-end-time">
+  
+  </div>
+  </div> <!--row3-->
+  
+  
+ </div>
+
+ <script src="Script.js" type="text/javascript"></script>
+ 
+</body>
+
+</html>

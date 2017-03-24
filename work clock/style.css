@@ -1,0 +1,169 @@
+
+body {
+	background-color: black !important;
+	
+
+}
+
+#row1 {
+	margin-top:50px;
+}
+
+.col-md-4 {
+	background-color: gray;
+	height: 70px;
+	border-width:2px;
+	border-style: solid;
+	border-color: white;
+
+}
+
+.title-small {
+	color: white;
+	text-align: center;
+}
+
+#start-input {
+	width: 40%;
+	margin-right: 40%;
+	margin-left:20%;
+	height: 40px;
+	font-size: 34px;
+	text-align: center;
+	font-family: 'Jim Nightshade', cursive;
+	text-shadow: 1px 1px 2px rgba(150, 150, 150, 1);
+}
+
+#hour-rate-input {
+	
+width: 40%;
+	margin-right: 40%;
+	margin-left:20%;
+	height: 40px;
+	font-size: 34px;
+	text-align: center;
+	font-family: 'Jim Nightshade', cursive;
+
+}
+
+#expected-end-time-input {
+width: 40%;
+	margin-right: 40%;
+	margin-left:20%;
+	height: 40px;
+	font-size: 34px;
+	text-align: center;
+	font-family: 'Jim Nightshade', cursive;
+	text-shadow: 1px 1px 2px rgba(150, 150, 150, 1);
+}
+
+.col-md-3 {
+	background-color: gray;
+	height: 70px;
+	border-width:2px;
+	border-style: solid;
+	border-color: white;
+	margin-top: 40px;
+}
+
+.col-md-6 {
+	background-color: gray;
+	height: 110px;
+	border-width:2px;
+	border-style: solid;
+	border-color: white;
+	margin-top: 20px;
+}
+
+.col-md-8 {
+	background-color: gray;
+	height: 210px;
+	border-width:2px;
+	border-style: solid;
+	border-color: white;
+	margin-top: 20px;
+}
+
+
+/*css for js */
+
+.submit {
+	position: absolute;
+	top: 20px;
+	right:67px;
+	height:40px;
+	font-size: 34px;
+	text-align: center;
+	font-family: 'Jim Nightshade', cursive;
+	line-height: 40px;
+	
+}
+.submit:hover {
+	background-color: lightgrey;
+}
+
+#current-time-box {
+	background-color: lightgray;
+	height: 60%;
+}
+
+#current-time {
+		font-size: 34px;
+	text-align: center;
+	font-family: 'Jim Nightshade', cursive;
+	text-shadow: 1px 1px 2px rgba(150, 150, 150, 1);
+}
+
+#elapsed-time-box {
+	background-color: lightgray;
+	height: 60%;
+}
+
+#elapsed-time {
+		font-size: 34px;
+	text-align: center;
+	font-family: 'Jim Nightshade', cursive;
+	text-shadow: 1px 1px 2px rgba(150, 150, 150, 1);
+}
+
+#time-remaining-box {
+	background-color: lightgray;
+	height: 55%;
+	margin-top: 5px;
+	font-size: 54px;
+	font-family: 'Jim Nightshade', cursive;
+	line-height: 65px;
+	color: darkred;
+	text-shadow: 1px 1px 2px rgba(150, 150, 150, 1);
+	
+}
+
+#time-remaining-large {
+		font-size: 24px;
+	text-align: center;
+	font-family: 'Jim Nightshade', cursive;
+}
+
+#time-remaining{
+		font-size: 54px;
+	text-align: center;
+	font-family: 'Jim Nightshade', cursive;
+	text-shadow: 1px 1px 2px rgba(150, 150, 150, 1);
+}
+
+#earnings-box {
+	background-color: lightgray;
+	height: 60%;
+	margin-top: 20px;
+		font-family: 'Jim Nightshade', cursive;
+	text-shadow: 1px 1px 2px rgba(150, 150, 150, 1);
+}
+
+#earnings {
+		font-size: 74px;
+	text-align: center;
+	font-family: 'Jim Nightshade', cursive;
+	text-shadow: 1px 1px 2px rgba(150, 150, 150, 1);
+	line-height: 150px;
+	color: darkred;
+}
