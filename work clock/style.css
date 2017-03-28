@@ -167,3 +167,30 @@ width: 40%;
 	line-height: 150px;
 	color: darkred;
 }
+
+#lunch {
+	color:white;
+	font-family: 'Jim Nightshade', cursive;
+	font-size: 20px;
+	position: absolute;
+	top: 280px;
+}
+
+#lunch-button1 {
+	width: 60px;
+	position: absolute;
+	top: 350px;
+	margin-left: 80px;
+	margin-top:20px;
+
+}
+
+#lunch-button2 {
+	width: 60px;
+	position: absolute;
+	top: 350px;
+	margin-top:20px;
+
+
+}
+
