@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Lemonada" rel="stylesheet">
+</head>
+
+<body>
+	<div class="container">
+	  <div class="row"> <!--First row starts here-->
+	  <div class="col-md-2 first-row" id="heads-coin">
+	  </div>
+	  <div class="col-md-8 first-row">
+	  <p id="title">Heads or Tails</p>
+	  <div id="buttons">
+	  <button onclick="headsChosen()" class="btn-warning" id="heads">Heads</button>
+	  <button onclick="tailsChosen()" class="btn-warning" id ="tails">Tails</button>
+	  </div> <!--buttons-->
+	  </div>
+	  <div class="col-md-2 first-row" id="tails-coin">
+	  </div>
+	  </div><!--First row ends here-->
+	  <div class="row" id="row2"><!--Second row starts here-->
+	  <div class="col-md-2">
+	  </div>
+	  <div class="col-md-8">
+	  <div id="result">
+	  </div>
+	  </div>
+	  <div class="col-md-2">
+	  </div>
+	  </div><!--Second row ends here-->
+	</div> <!--container-->
+	<div id="coin-flip-cont">
+<div id="coin">
+<div class="front"></div>
+<div class="back"></div>
+<script src="script.js"></script>
+
+</body>
+
+</html>
