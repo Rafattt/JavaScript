@@ -1,9 +1,25 @@
+ var lunchTaken = 0;
+   var password;
+   var pass1 = "WorkClock";
  // CURRENT TIME - REGULAR CLOCK
  (function myClock(){
    var dat = new Date();
    var hours = dat.getHours();
    var minutes = dat.getMinutes();
    var seconds = dat.getSeconds();
+ 
+   
+   
+   function pass(){
+   password=prompt('Please enter your password to view this page!');
+   
+   if(password == pass1){
+	    alert("Password Correct! Click OK to enter.");
+   }  else {
+		   window.location="http://darpet.com/";
+	   }
+   }
+
  
    if (minutes < 10) {
 	 document.getElementById("current-time").innerHTML = hours + ":0" + minutes + ":" + seconds;
@@ -128,18 +144,34 @@
    earnings = Math.round(earnings * 100) / 100;
    earningsFix = (earnings).toFixed(2)
    document.getElementById("hour-rate-input").style.color = 'white';
- 
+   console.log(lunchTaken);
 		   
-	  
-   document.getElementById("earnings").innerHTML =earningsFix +" Dollars";
-
+	  if (lunchTaken === 0){
+		  document.getElementById("earnings").innerHTML =earningsFix +" Dollars";
+	  } else {
+		     document.getElementById("earnings").innerHTML =(earningsFix-rate/2) +" Dollars";
+	  }
    var t = setTimeout(hourRate, 1000);
    
 	  }
 	  
 	  //change text color on click
 	  
-	  function init() { 
-  document.getElementById("hour-rate-input").style.color = 'blue';
+
+var property = document.getElementById("lunch-button1");
+var property2 = document.getElementById("lunch-button2");
+
+function lunchCheck() {
+	
+       lunchTaken = 1;
+	   property.style.backgroundColor = "red";
+	   property2.style.backgroundColor = "lightgrey";
+	
+}
+
+function lunchUnCheck() {
+	lunchTaken = 0;
+	property2.style.backgroundColor = "red";
+	   property.style.backgroundColor = "lightgrey";
 }
        
