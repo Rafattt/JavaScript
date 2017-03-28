@@ -1,0 +1,107 @@
+.container {
+	width:1170px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top:20px;
+}
+
+#title {
+	font-family: 'Bangers', cursive;
+	text-align: center;
+	font-size:50px;
+	color: darkred;
+}
+
+#row1 {
+
+	margin-left: 50px;
+	margin-right: 50px;
+	width:1070px;
+
+	
+
+}
+
+#thermometr {
+	height: 300px;
+	width:150px;
+	background-color: black;
+	float: left;
+
+
+}
+
+
+
+.temp-box {
+	height: 148px;
+    background-color:lightgray;
+	border-style: solid;
+	border-width: 1px;
+	border-color: black;
+	width: 975px;
+	
+
+}
+
+#input-box {
+	background-color:white;
+	height: 70px;
+	width: 599px;
+	margin-left: 288px;
+	margin-right: 88px;
+	margin-top: 40px;
+}
+
+#output-box {
+	background-color:white;
+	height: 70px;
+	width: 599px;
+	margin-left: 288px;
+	margin-right: 88px;
+	margin-top: 40px;
+	font-size:54px;
+	text-align:center;
+	font-family: 'Bangers', cursive;
+}
+
+#input {
+	background-color:white;
+	height: 70px;
+	width: 599px;
+	font-size:54px;
+	text-align:center;
+	font-family: 'Bangers', cursive;
+
+}
+
+#unit1{
+	position: relative;
+	color: black;
+	left: 60px;
+	top: 45px;
+	font-size: 60px;
+	float:left;
+}
+
+#unit2{
+	position: relative;
+	color: black;
+	left: 60px;
+	top: 45px;
+	font-size: 60px;
+	float:left;
+}
+
+#swap {
+	width:977px;
+	height: 50px;
+	font-size: 30px;
+	font-family: 'Bangers', cursive;
+}
+
+#term-img{
+	margin-left:20px;
+	margin-top:20px;
+}
+
