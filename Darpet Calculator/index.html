@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Darpet Price Calculator</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+</head>
+
+<body>
+ <div class="container">
+   <div class="row">
+   <div class="col-md-4 first-row left-side" >
+   <div id="logo">
+   <img src="./images/darpetlogo.png" alt="Darpet">
+   </div>
+   </div>
+   <div class="col-md-8 first-row right-side">
+   <p id="price-title">Price</p>
+   <p id="calculator-title">Calculator</p>
+   </div>
+ </div>
+ <div class="row">
+ <div class="col-md-3 row2">
+ <p class="description">Cost</p>
+ <input id="cost-input" class="input" oninput="getCost()">
+
+ 
+ </div>
+  <div class="col-md-3 row2">
+  <p class="description">Frame</p>
+  <input oninput="getFrame()" id="frame-input" class="input">
+ </div>
+  <div class="col-md-3 row2">
+  <p class="description">Adder 1</p>
+  <input oninput="getAdder1()" id="adder1-input" class="input">
+ </div>
+  <div class="col-md-3 row2">
+  <p class="description">Adder 2</p>
+  <input oninput="getAdder2()" id="adder2-input" class="input">
+ </div>
+ </div> <!--row-->
+ <div class="row">
+ <div class ="col-md-3 row3">
+ </div>
+ <div class="col-md-6 row3">
+  <p class="description-multi">Multiplier</p>
+  <input oninput="getMultiplier()" id="multiplier-input" class="input-multiplier">
+  
+ </div>
+ <div class ="col-md-3 row3">
+ </div>
+ 
+ </div> <!--row-->
+ <div class="row">
+ <div class ="col-md-3 row3 left-side-bottom">
+ </div>
+ <div class="col-md-6 row3">
+  <p class="description-multi">Formula:</p>
+  <div id="formula" class="output">
+  </div>
+ </div>
+ <div class ="col-md-3 row3 right-side-bottom">
+ <p class="description-multi">Price:</p>
+  <div id="price" class="output">
+  </div>
+ </div>
+ </div><!--row-->
+ </div>
+ 
+  <script src="Script.js" type="text/javascript"></script>
+  
+</body>
+
+</html>

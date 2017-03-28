@@ -1,0 +1,141 @@
+body {
+	background-color: #696969 !important;
+}
+
+.container {
+	background-color: #696969;
+	margin-top: 20px;-webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+	
+	
+}
+
+.left-side {
+	-webkit-border-top-left-radius: 10px;
+    -moz-border-radius-topleft: 10px;
+    border-top-left-radius: 10px;
+}
+.right-side {
+	-webkit-border-top-right-radius: 10px;
+    -moz-border-radius-topright: 10px;
+    border-top-right-radius: 10px;
+}
+
+.left-side-bottom {
+	-webkit-border-bottom-left-radius: 10px;
+    -moz-border-radius-bottomleft: 10px;
+     border-bottom-left-radius: 10px;
+}
+
+.right-side-bottom {
+	-webkit-border-bottom-right-radius: 10px;
+    -moz-border-radius-bottomright: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.first-row {
+	background-color: white;
+	height: 200px;
+	width: 100%;
+	
+}
+
+#logo {
+	margin-top: 10px;
+	
+}
+
+#price-title {
+	font-family: 'Roboto Mono', monospace;
+	font-size: 80px;
+	color: #831e0c;
+	text-shadow: 4px 4px 2px rgba(150, 150, 150, 1);
+}
+
+#calculator-title {
+	font-family: 'Roboto Mono', monospace;
+	font-size: 80px;
+	margin-bottom: 50px;
+	position: absolute;
+	top: 90px;
+	right: 90px;
+	color: #831e0c;
+	text-shadow: 4px 4px 2px rgba(150, 150, 150, 1);
+}
+
+.row2 {
+	height: 100px;
+	background-color: lightblue;
+}
+
+.description {
+	text-align: center;
+	color: black;
+	font-family: 'Roboto Mono', monospace;
+	margin-top: 5px;
+}
+
+.input {
+	margin-left: 100px;
+	width: 60px;
+	text-align: center;
+}
+.submit {
+	position: absolute;
+}
+
+.row3 {
+	height: 150px;
+	background-color: lightblue;
+}
+
+.description-multi {
+	text-align: center;
+	color: black;
+	font-family: 'Roboto Mono', monospace;
+	margin-top: 5px;
+	font-size: 16px;
+}
+
+.input-multiplier {
+	
+	margin-left: 190px;
+	width: 170px;
+	height: 60px;
+	font-size: 40px;
+	text-align: center;
+
+}
+
+.submit-multiplier {
+	position: absolute;
+	height: 60px;
+}
+
+.output {
+	background-color: white;
+	height: 80px;
+	
+}
+
+#formula {
+	font-size: 24px;
+	text-align: center;
+	font-family: 'Roboto Mono', monospace;
+	margin-top: 5px;
+	line-height: 80px;
+}
+
+#price {
+	width: 200px;
+	margin-left: 20px;
+	font-size: 40px;
+	text-align: center;
+	font-family: 'Roboto Mono', monospace;
+	margin-top: 5px;
+	line-height: 80px;
+
+	
+	
+}
