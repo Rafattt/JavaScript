@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="bootstrap.min.css">
+		<link rel="stylesheet" href="style.css">
+		<link href="https://fonts.googleapis.com/css?family=Cormorant+SC" rel="stylesheet">
+		<title>Wikipedia Viewer</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	</head>
+	
+	<body>
+	
+		<div class="container">
+			<div class="row" id="header">
+				<div class="col-md-3">
+				</div>
+				<div class="col-md-6">
+					<div id="logo" class="center-block">
+					</div>
+				</div>
+				<div class="col-md-3">
+				</div>
+			</div>
+			
+			<div class="row" id="title-row">
+				<div class="center-block" id="title">Wikipedia Viewer</div>
+			</div>
+			
+			<div class="row" id="search-box">
+				<div class="block-center" id="search-box-center">
+					<input type="text" id="search"  class="d-inline">
+					<button onclick="key()" type="button"  class="btn d-inline" id="search-button">Search</button>
+					<a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank">
+					<button  type="button"  class="btn d-inline" id="search-button ">Random article</button>
+					</a>
+				</div>
+			</div>
+			
+			<div class="row" id="footer">
+				
+			</div>
+			
+		</div>
+		
+		<script src="jquery-3.2.1.min.js"></script>
+		<script src="script.js"></script>
+	</body>
+</html> 
