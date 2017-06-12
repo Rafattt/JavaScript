@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="bootstrap.min.css">
+		<link rel="stylesheet" href="style.css">
+		<script src="jquery-3.2.1.min.js"></script>
+		<script src="script.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row" id="row1">
+				<div class ="col-md-3">
+					<button onclick="powerIncrase()" type="button" class="btn">Incrase Power</button>
+				</div>
+				<div class ="col-md-3">
+					<input type="button"  onclick="autoPowerClick();autoPowerIncrase();autoPowerLose()" id="autoPower" value="Auto Power Lvl 1" type="button" class="btn">
+					<p id="reqPower">Cost: 50 Power</p>
+				</div>
+				<div class ="col-md-3">
+				<input type="button"  onclick="clickPowerLevel()" id="clickPower" value="Click Power Lvl " type="button" class="btn">
+					<p id="reqPowerBonus">Cost: 500 Power</p>
+				</div>
+			</div>
+			<div class="row" id="row2">
+			</div>
+			<div class="row" id="row3">
+			</div>
+		</div>
+		
+		
+		
+		
+	</body>
+</html>
