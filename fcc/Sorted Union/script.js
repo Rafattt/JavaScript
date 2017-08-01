@@ -12,10 +12,6 @@ var newArray = [];
 			newArray.push(fullArray[i]);
 		}
 	}
-
-console.log(fullArray);
-console.log(indexOfArray);
-console.log("newArray: "+newArray);
 	
 	arr = newArray;
 	
