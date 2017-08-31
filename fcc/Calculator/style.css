@@ -1,0 +1,149 @@
+#calculator-box {
+	background-color:silver;
+	height: 500px;
+	width: 350px;
+	margin: 100px auto 0px auto;
+	border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	border: 1px solid #000000;
+	box-shadow: 0px 3px 0px 0px #222121, inset -1px -3px 10px 1px #000000;
+	
+}
+
+#title {
+	text-align:center;
+	padding-top: 10px;
+	font-size: 30px;
+	font-family: 'Saira Semi Condensed', sans-serif;
+	color: black;
+}
+
+#screen {
+	height: 70px;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: lightblue;
+}
+
+#main-text {
+	text-align:right;
+	font-size: 30px;
+	font-family: 'Saira Semi Condensed', sans-serif;
+	color: black;
+}
+
+#sub-text {
+	text-align:right;
+	font-size: 15px;
+	font-family: 'Saira Semi Condensed', sans-serif;
+	color: black;
+}
+
+/*buttons style css starts here*/
+
+#buttons-box{
+	position: relative;
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+	height: 65%;
+}
+
+.buttons {
+	height: 50px;
+	width: 50px;
+	background-color: #2F4F4F;
+	z-index: 121;
+	float:left;
+	margin-left:10px;
+	margin-right:10px;
+	margin-top:10px;
+	color: white;
+	text-align: center;
+	line-height: 50px;
+	font-family: 'Saira Semi Condensed', sans-serif;
+	border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	border: 0px solid #000000;
+	box-shadow: 0px 3px 0px 0px #222121, inset -1px -3px 10px 1px #000000;
+	cursor: pointer;
+}
+
+.buttons:active{
+	background-color: white;
+}
+
+#equal-button {
+	height: 120px;
+	width: 50px;
+	background-color: #2F4F4F;
+	float:left;
+	margin-left:10px;
+	margin-right:10px;
+	margin-top:10px;
+	color: white;
+	text-align: center;
+	line-height: 120px;
+	font-family: 'Saira Semi Condensed', sans-serif;
+	border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	border: 0px solid #000000;
+	box-shadow: 0px 3px 0px 0px #222121, inset -1px -3px 10px 1px #000000;
+	cursor: pointer;
+}
+
+#equal-button:active{
+	background-color: white;
+}
+
+#button-zero {
+	height: 50px;
+	width: 120px;
+	background-color: #2F4F4F;
+	float:left;
+	margin-left:10px;
+	margin-right:10px;
+	margin-top:-50px;
+	color: white;
+	text-align: center;
+	line-height: 50px;
+	font-family: 'Saira Semi Condensed', sans-serif;
+	border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	border: 0px solid #000000;
+	box-shadow: 0px 3px 0px 0px #222121, inset -1px -3px 10px 1px #000000;
+	cursor: pointer;
+}
+
+#button-zero:active{
+	background-color: white;
+}
+
+#button-dot {
+	height: 50px;
+	width: 50px;
+	background-color: #2F4F4F;
+	float:left;
+	margin-left:150px;
+	margin-right:10px;
+	margin-top:-50px;
+	color: white;
+	text-align: center;
+	line-height: 50px;
+	font-family: 'Saira Semi Condensed', sans-serif;
+	border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	border: 0px solid #000000;
+	box-shadow: 0px 3px 0px 0px #222121, inset -1px -3px 10px 1px #000000;
+	cursor: pointer;
+}
+#button-dot:active{
+	background-color: white;
+}
