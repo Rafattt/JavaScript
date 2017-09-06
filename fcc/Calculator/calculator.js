@@ -89,8 +89,6 @@ $(document).ready(function(){
 			checkIfFirstZero();
 		});
 		$("#equal-button").click(function(){
-			typedNumbers = typedNumbers.toString(); 
-			typedNumbers = typedNumbers.replace(/,/g, "");
 			result = eval(typedNumbers);
 			typedNumbers = result;
 			$("#main-text").html(result);
