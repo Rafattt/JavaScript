@@ -7,7 +7,6 @@ html {
 }
 
 #container {
-	background-color: blue;
 	height: 600px;
 	width: 600px;
 	margin: 50px auto 0px auto;
@@ -37,11 +36,21 @@ html {
 
 .minus, .plus  {
 	position:relative;
-	top:-10px
+	top:-5px;
+	background-color: Transparent;
+	background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+	color: white;
+	font-size: 37px;
+}
+.plus {
+	top:-2px;
 }
 
 .settings-box {
-	background-color: yellow;
 	text-align: center;
 	margin-top: 15px;
 	font-size: 44px;
@@ -53,26 +62,29 @@ html {
 #break-box {
 	height: 120px;
 	width: 120px;
-	background-color: green;
 	float: left;
 }
 
 #session-box {
 	height: 120px;
 	width: 120px;
-	background-color: green;
 	margin-left: 280px;
 }
 
 #pomodoro-box {
 	height: 300px;
 	width: 300px;
-	background-color: green;
+	background-color: transparent;
+	border-style: solid;
+	border-width: 3px;
+	border-color: green;
 	margin: 30px auto 0px auto;
 	border-radius: 50%;
 	clear:both;
 	cursor: pointer;
+	z-index:4;
 }
+
 
 #session-text {
 	padding-top: 30px;
