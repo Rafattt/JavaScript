@@ -119,7 +119,7 @@ $(".pomodoro-box").click(function clock(){  //timer starts and stops when elemen
 });	//onclick pomodoro-box ends here
 	
 $("#reset").click(function clock(){  //reset everything to default values
-		
+	$('.pomodoro-box').click(); //forced click to reset intervals
 	breakLength = 5; 
 	breakLeft = 5;	
 	sessionLength = 25; 
