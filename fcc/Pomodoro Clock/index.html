@@ -3,7 +3,7 @@
 	<meta charset="utf-8" /> 
 	<title>Pomodoro Clock</title>
 	<link rel="stylesheet" href="style.css">
-	<link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Acme|Orbitron" rel="stylesheet">
 	<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="script.js"></script>
 </head>
@@ -11,6 +11,7 @@
 	<div id="container">
 		<div id="title">Pomodoro Clock</div>
 		<div id="settings">
+			
 			<div id="break-box">
 				<div class="settings-titles">Break Length</div>
 				<div class="settings-box">
@@ -27,10 +28,12 @@
 					<button class="plus" id="plus-session">+</button>
 				</div><!--settings-box-->
 			</div> <!--session-box-->
-			<div id="pomodoro-box">
+			<div class="pomodoro-box">
 				<div id="session-text">Session</div>
-				<div id="session-clock">25</div>
+				<div id="session-clock">25:00</div>
 			</div> <!--pomodoro-box-->
+			<div id="credits">Designed & Coded by <a href="https://github.com/Rafattt" target="_blank">Rafal Kmiecik</a></div>
+			<div id="reset">reset</div>
 		</div> <!--settings-->
 	</div> <!--container-->
 <body>

@@ -1,23 +1,22 @@
-
-
 html {
 	height: 100vh;
 	width: 100vw;
-	background-color: grey;
+	background-image: url("bkg.png");
+
 }
 
-#container {
-	height: 600px;
-	width: 600px;
-	margin: 50px auto 0px auto;
+a {
+		color: rgba(0, 137, 32, 0.9);
+		text-shadow: 1px 2px 15px #048014;
 }
 
 #title {
-	color: white;
 	text-align: center;
 	font-size: 64px;
 	padding-top: 20px;
-	font-family: 'Acme', sans-serif;
+	font-family: 'Orbitron', sans-serif;
+	color: rgba(0, 137, 32, 0.9);
+	text-shadow: 1px 2px 15px #048014;
 }
 
 #settings {
@@ -30,8 +29,9 @@ html {
 .settings-titles {
 	padding-top: 5px;
 	text-align: center;
-	color: white;
-	font-family: 'Acme', sans-serif;
+	font-family: 'Orbitron', sans-serif;
+	color: rgba(0, 137, 32, 0.9);
+	text-shadow: 1px 2px 15px #048014;
 }
 
 .minus, .plus  {
@@ -43,9 +43,10 @@ html {
     cursor:pointer;
     overflow: hidden;
     outline:none;
-	color: white;
-	font-size: 37px;
+	color: blue;
+	font-size: 30px;
 }
+
 .plus {
 	top:-2px;
 }
@@ -53,10 +54,11 @@ html {
 .settings-box {
 	text-align: center;
 	margin-top: 15px;
-	font-size: 44px;
-	line-height: 44px;
-	font-family: 'Acme', sans-serif;
-	
+	font-size: 28px;
+	line-height: 28px;
+	font-family: 'Orbitron', sans-serif;
+	color: rgba(0, 137, 32, 0.9);
+	text-shadow: 1px 2px 15px #048014;	
 }
 
 #break-box {
@@ -71,13 +73,17 @@ html {
 	margin-left: 280px;
 }
 
-#pomodoro-box {
+.pomodoro-box {
 	height: 300px;
 	width: 300px;
-	background-color: transparent;
+	background-color: black;
 	border-style: solid;
 	border-width: 3px;
-	border-color: green;
+	 -webkit-transition: border 1s linear, box-shadow 1s linear;
+       -moz-transition: border 1s linear, box-shadow 1s linear;
+            transition: border 1s linear, box-shadow 1s linear;
+	border-color: blue;
+	box-shadow: 1px 2px 15px #0038F0;
 	margin: 30px auto 0px auto;
 	border-radius: 50%;
 	clear:both;
@@ -85,18 +91,80 @@ html {
 	z-index:4;
 }
 
+.pomodoro-box2 {
+	height: 300px;
+	width: 300px;
+	background-color: black;
+	border-style: solid;
+	border-width: 3px;
+	 -webkit-transition: border 1s linear, box-shadow 1s linear;
+       -moz-transition: border 1s linear, box-shadow 1s linear;
+            transition: border 1s linear, box-shadow 1s linear;
+	border-color: red;
+	box-shadow: 1px 2px 15px #D60000;
+	margin: 30px auto 0px auto;
+	border-radius: 50%;
+	clear:both;
+	cursor: pointer;
+	z-index:4;
+}
+
+.pomodoro-box.active {
+	-webkit-box-shadow: 0 0 180px #0038F0;
+       -moz-box-shadow: 0 0 180px #0038F0;
+            box-shadow: 0 0 180px #0038F0;
+}
+
+.pomodoro-box2.active {
+	-webkit-box-shadow: 0 0 180px #D60000;
+       -moz-box-shadow: 0 0 180px #D60000;
+            box-shadow: 0 0 180px #D60000;
+}
 
 #session-text {
 	padding-top: 30px;
+	margin-top:15px;
 	text-align: center;
-	color: white;
+	color: rgba(0, 137, 32, 0.9);
+	text-shadow: 1px 2px 15px #048014;
 	font-size: 44px;
-	font-family: 'Acme', sans-serif;
+	font-family: 'Orbitron', sans-serif;;
 }
 
 #session-clock {
-	font-family: 'Acme', sans-serif;
-	font-size: 114px;
+	font-family: 'Orbitron', sans-serif;
+	font-size: 76px;
+	margin-top:10px;
 	text-align: center;
-	color: white;
+	color: rgba(0, 137, 32, 0.9);
+	text-shadow: 1px 2px 15px #048014;
+}
+
+#reset {
+	text-align: center;
+	font-family: 'Orbitron', sans-serif;
+	color: rgba(0, 137, 32, 0.9);
+	text-shadow: 1px 2px 15px #048014;
+	margin-top:70px;
+	border: solid 1px;
+	width: 55px;
+	float:right;
+	right: -200px;
+	position:relative;
+	cursor: pointer;
+}
+
+#reset:hover {
+	box-shadow: 1px 2px 15px #048014;
+}
+
+#credits {
+	text-align: center;
+	font-family: 'Orbitron', sans-serif;
+	color: rgba(0, 137, 32, 0.9);
+	margin-top:70px;
+		float:left;
+	left: -300px;
+	position:relative;
+	font-size: 14px;
 }
