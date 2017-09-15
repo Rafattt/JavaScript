@@ -73,7 +73,7 @@ a {
 	margin-left: 280px;
 }
 
-.pomodoro-box {
+.pomodoro-box { /*style for session state*/
 	height: 300px;
 	width: 300px;
 	background-color: black;
@@ -91,7 +91,7 @@ a {
 	z-index:4;
 }
 
-.pomodoro-box2 {
+.pomodoro-box2 { /*style for break state*/
 	height: 300px;
 	width: 300px;
 	background-color: black;
@@ -109,17 +109,25 @@ a {
 	z-index:4;
 }
 
-.pomodoro-box.active {
+.pomodoro-box.active { /*blue glover for session state*/
 	-webkit-box-shadow: 0 0 180px #0038F0;
        -moz-box-shadow: 0 0 180px #0038F0;
             box-shadow: 0 0 180px #0038F0;
 }
 
-.pomodoro-box2.active {
+.pomodoro-box2.active { /*red glover for session state*/
 	-webkit-box-shadow: 0 0 180px #D60000;
        -moz-box-shadow: 0 0 180px #D60000;
             box-shadow: 0 0 180px #D60000;
 }
+
+.pomodoro-box.inactive {  /*class added to reset glover state (pause and reset)*/
+	-webkit-box-shadow: 0 0 0px #0038F0;
+       -moz-box-shadow: 0 0 0px #0038F0;
+            box-shadow: 0 0 0px #0038F0;
+}
+
+
 
 #session-text {
 	padding-top: 30px;

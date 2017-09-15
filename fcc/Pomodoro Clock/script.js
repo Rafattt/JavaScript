@@ -68,6 +68,7 @@ $(".pomodoro-box").click(function clock(){  //timer starts and stops when elemen
 	}
 		function timer(){ 
 			if( checkIfPaused == 1){
+				glower.addClass('active').removeClass('inactive'); // turning on glower after pause
 				$("#session-clock").html((timeLeft)+":"+seconds);
 				if(seconds<10 && seconds>0){
 					$("#session-clock").html(timeLeft+":0"+seconds);
@@ -84,20 +85,19 @@ $(".pomodoro-box").click(function clock(){  //timer starts and stops when elemen
 					beep();
 					if(titleName == "Session"){ //if titleName is "Session" when timer reaching 0 changing it to "Break" and changing css to break mode
 						breakLeft = breakLength;
-						$("#session-text").html("Break");
 						timeLeft = breakLength-1;
 						seconds = 59;
 						$(".pomodoro-box").addClass('pomodoro-box2').removeClass('pomodoro-box');
-						$(".pomodoro-box").addClass('pomodoro-box2').removeClass('pomodoro-box');
 						$(".pomodoro-box.active").addClass('.pomodoro-box2.active').removeClass('.pomodoro-box.active');
 						$("#session-text").html("Break");
+						titleName = "Break";
 					} else if(titleName == "Break") { //if titleName is "Break" when timer reaching 0 changing it to "Session" and changing css to session mode
 						timeLeft = sessionLength-1;
 						seconds = 59;
 						$(".pomodoro-box2").addClass('pomodoro-box').removeClass('pomodoro-box2');
-						$(".pomodoro-box2").addClass('pomodoro-box').removeClass('pomodoro-box2');
 						$(".pomodoro-box2.active").addClass('.pomodoro-box.active').removeClass('.pomodoro-box2.active');
 						$("#session-text").html("Session");
+						titleName = "Session";
 					}
 					timer(); 
 				} else{
@@ -106,6 +106,7 @@ $(".pomodoro-box").click(function clock(){  //timer starts and stops when elemen
 			} else {
 				clearInterval(refreshIntervalId);  //clearing interval for timer
 				clearInterval(glo);	//clearing interval for glow
+				glower.addClass('inactive').removeClass('active'); //reseting glower to default (inactive) state
 			}
 		};
 				var glo = window.setInterval(function() {  //interval for glowing pomodoro-box
@@ -119,7 +120,7 @@ $(".pomodoro-box").click(function clock(){  //timer starts and stops when elemen
 });	//onclick pomodoro-box ends here
 	
 $("#reset").click(function clock(){  //reset everything to default values
-	$('.pomodoro-box').click(); //forced click to reset intervals
+		
 	breakLength = 5; 
 	breakLeft = 5;	
 	sessionLength = 25; 
@@ -129,11 +130,10 @@ $("#reset").click(function clock(){  //reset everything to default values
 				$("#break-length").html(breakLength);
 				$("#session-length").html(sessionLength);
 				$(".pomodoro-box2").addClass('pomodoro-box').removeClass('pomodoro-box2');
-				$(".pomodoro-box2").addClass('pomodoro-box').removeClass('pomodoro-box2');
 				$(".pomodoro-box2.active").addClass('.pomodoro-box.active').removeClass('.pomodoro-box2.active');
 				$("#session-text").html("Session");
 				$("#session-clock").html(timeLeft+1+":00");
-				glower.removeClass('.active');
+				glower.addClass('inactive').removeClass('active'); //reseting glower to default (inactive) state
 
 });
 	
