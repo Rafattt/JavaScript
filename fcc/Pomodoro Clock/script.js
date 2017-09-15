@@ -23,7 +23,7 @@ $("#break-length").html(breakLength);
 		}
 	});
 	$("#plus-break").click(function(){
-		if( checkIfPaused!== 1){	//working only if timer is paused
+		if( checkIfPaused!== 1 && breakLength<99){	//working only if timer is paused and breakLength is smaller than 100
 		breakLength++;
 		breakLeft = breakLength;
 		$("#break-length").html(breakLength);
@@ -42,7 +42,7 @@ $("#session-length").html(sessionLength);
 		}
 	});
 	$("#plus-session").click(function(){
-		if(checkIfPaused !== 1){	//working only if timer is paused
+		if(checkIfPaused !== 1 && sessionLength<99){	//working only if timer is paused and sessionLength is smaller than 100
 		sessionLength++;
 		timeLeft = sessionLength;
 		timeLeft = sessionLength-1;
