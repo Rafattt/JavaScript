@@ -8,7 +8,7 @@ var seconds = 59;	//number of seconds left to decrase minutes left by 1
 var checkIfPaused = 0; // checking if timer is paused, 1 - paused
 var glower = $('.pomodoro-box'); //store class for glow animation
 var titleName = $("#session-text").html();
-var audio = new Audio('https://soundbible.com/grab.php?id=1377&type=mp3'); //store sound for alert when timer set 0
+var audio = new Audio('https://soundbible.com/grab.php?id=2156&type=mp3'); //store sound for alert when timer set 0
 
 // --------- settings for length of break and session below this line ---------
 
