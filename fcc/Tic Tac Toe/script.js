@@ -51,11 +51,27 @@ $(document).ready(function (){
 				
 				
 
-				console.log("win: "+winConditions[0]);
+				
 				console.log("player: "+playerOneFields);
-				if($(winConditions[0]).not(playerOneFields).length === 0 && $(playerOneFields).not(winConditions[0]).length === 0){
-					document.write("You Win!");
+				for(var i= 0; i<8;i++){
+					// fragment copied from stack starts here
+				var res = winConditions[i].filter(function(v) { // iterate over the array
+  // check element present in the second array
+  return playerOneFields.indexOf(v) > -1;
+  // or array2.includes(v)
+})
+
+console.log(res);
+// fragment copied from stack ends here
+if(res.length === 3){
+	document.write("You win");
+}
 				}
+
+
+				/*if($(winConditions[0]).not(playerOneFields).length === 0 && $(playerOneFields).not(winConditions[0]).length === 0){
+					document.write("You Win!");
+				}*/
 					
 				
 			} else if(controlNumber == 1){
