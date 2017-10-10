@@ -1,6 +1,6 @@
 html {
     height: 100%;
-	background-color:grey;
+	background-color:gray;
 	
 }
 
@@ -47,8 +47,8 @@ html {
 
 #number-of-players-box {
 	background-color: black;
-	width: 500px;
-	height:550px;
+	height: 600px;
+	width: 548px;
 	margin:auto;
 	
 	
@@ -84,12 +84,11 @@ html {
 
 #choose-symbol-box {
 	background-color: black;
-	width: 500px;
-	height:550px;
+	height: 600px;
+	width: 548px;
 	margin:auto;
 	position: relative;
-	top: -550px;
-	visibility:hidden;
+	display:none;
 	
 	
 }
@@ -111,7 +110,7 @@ html {
 	float: left;
 	font-size: 34px;
 	margin-left: 150px;
-	top: 150px;
+	top: -350px;
 }
 
 .symbols:hover {
@@ -119,3 +118,44 @@ html {
 	color:gray;
 }
 
+#player-one-win {
+	font-family: 'Indie Flower', cursive;
+	color: gold;
+	font-size: 80px;
+	text-align:center;
+	margin-left:auto;
+	margin-right:auto;
+	position:relative;
+	top:-400px;
+	width:300px;
+	z-index:5;
+	display:none;
+}
+
+#player-two-win {
+	font-family: 'Indie Flower', cursive;
+	color: gold;
+	font-size: 80px;
+	text-align:center;
+	margin-left:auto;
+	margin-right:auto;
+	position:relative;
+	top:-400px;
+	width:300px;
+	z-index:5;
+	display:none;
+}
+
+#draw {
+	font-family: 'Indie Flower', cursive;
+	color: gold;
+	font-size: 80px;
+	text-align:center;
+	margin-left:auto;
+	margin-right:auto;
+	position:relative;
+	top:-400px;
+	width:300px;
+	z-index:5;
+	display:none;
+}

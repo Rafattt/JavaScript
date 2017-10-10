@@ -24,27 +24,23 @@ $(document).ready(function (){
 		game;
 		
 		function singlePlayerGame(){
-			for(var i = 0; i<emptyFields.length; i++){
-				$("#"+emptyFields[i]).html("");
-				$('#'+emptyFields[i]).css('pointer-events', 'auto');
-			}
-			$("#number-of-players-box").css('display','none');
-			$("#choose-symbol-box").css('display','block');
+			$("#number-of-players-box").css('visibility','hidden');
+			$("#choose-symbol-box").css('visibility','visible');
 			console.log("here");
 			symbolsMenu();
 			clickedFieldSinglePlayer();
 		}
 		
 		function twoPlayersGame(){	//multiplayer game
-			$("#number-of-players-box").css('display','none');
-			$("#choose-symbol-box").css('display','block');
+			$("#number-of-players-box").css('visibility','hidden');
+			$("#choose-symbol-box").css('visibility','visible');
 			symbolsMenu();
 			clickedField;
 		}
 		//playerMoves function writing player symbol on clicked field and making this field inactive
 		function playerMoves(player, symbol, control, playerNumber, field){
+			
 			$('#'+field).html(symbol);
-			var lastSymbol = field;
 			$('#'+field).css('pointer-events', 'none');
 			console.log("here");
 			player.push(field);
@@ -56,21 +52,8 @@ $(document).ready(function (){
 					return player.indexOf(v) > -1;
 				});
 				if(res.length === 3){ //if all 3 elements from winConditions array are in player(One/Two)Field player wins
-					for(let i = 0; i<=emptyFields.length; i++){
-						$('#'+emptyFields[i]).css('pointer-events', 'none');
-					}
-					$("#player-one-win").css('display','block');
-						setTimeout(function() {
-							$("#player-one-win").css('display','none');
-							restart();
-						}, 2000);
-					
+					document.write("Player "+playerNumber+" Win");
 					result = "win";
-					
-					
-	
-					res = "";
-					
 				} 
 			}
 		}
@@ -84,7 +67,7 @@ $(document).ready(function (){
 					} else if(playerOneSymbol == "O"){
 						playerTwoSymbol = "X";
 					}
-		$("#choose-symbol-box").css('display','none');
+		$("#choose-symbol-box").css('visibility','hidden');
 	});
 	}
 	
@@ -110,17 +93,10 @@ $(document).ready(function (){
 			console.log("playerTwoMoves");
 		}
 		fieldsClicked++;	//increment number of field clicked
-	
-		if(fieldsClicked === 9 && result !="win"){	//if nobody wins and all field (9) has been clicked it is draw
+		
+		if(fieldsClicked === 9 && result !="win"){	//if nubady wins and all field 990 has been clicked it is draw
 			
-			$("#draw").css('display','block');
-						setTimeout(function() {
-							$("#draw").css('display','none');
-						}, 2000);
-						
-						restart();
-					$('#'+lastField).html("");
-					res = "";
+			document.write("Draw!");
 		}
 	});
 	
@@ -155,10 +131,7 @@ $(document).ready(function (){
 					return playerTwoFields.indexOf(v) > -1;
 				});
 				if(res.length === 3){ //if all 3 elements from winConditions array are in player(One/Two)Field player wins
-					$("#player-two-win").css('display','block');
-						setTimeout(function() {
-							$("#player-two-win").css('display','none');
-						}, 2000);
+					document.write("Player 2 Win");
 					result = "win";
 				} 
 			}
@@ -166,12 +139,9 @@ $(document).ready(function (){
 		}
 		fieldsClicked++;	//increment number of field clicked
 		
-		if(fieldsClicked === 9 && result !="win"){	//if nobody wins and all field 990 has been clicked it is draw
+		if(fieldsClicked === 9 && result !="win"){	//if nubady wins and all field 990 has been clicked it is draw
 			
-			$("#draw").css('display','block');
-						setTimeout(function() {
-							$("#draw").css('display','none');
-						}, 2000);
+			document.write("Draw!");
 		}
 	});
 	}
@@ -192,23 +162,6 @@ $(document).ready(function (){
 					result = "win";
 				} 
 			}
-		}
-		
-		function restart(){
-			
-			result = "";
-			playerOneFields = [];	
-			playerTwoFields = [];
-			fieldsClicked = 0;	
-			controlNumber = 0;
-			combinedResults =[];
-			
-			for(var i = 0; i<=emptyFields.length; i++){
-				$("#"+emptyFields[i]).html("");
-				$('#'+emptyFields[i]).css('pointer-events', 'auto');
-			}
-			
-			
 		}
 	
 });
