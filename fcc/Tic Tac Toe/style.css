@@ -21,7 +21,8 @@ html {
 	-webkit-box-shadow: 7px 10px 5px -2px rgba(0,0,0,0.47);
 	-moz-box-shadow: 7px 10px 5px -2px rgba(0,0,0,0.47);
 	box-shadow: 7px 10px 5px -2px rgba(0,0,0,0.47);
-	background: url(bg1.png);
+	background: url(bg2.png);
+	
 	
 
 }
@@ -54,8 +55,9 @@ html {
 	height: 600px;
 	width: 548px;
 	
-    background: url(bg1.png);
+    background: url(bg2.png);
 	margin:auto;
+
 	
 	
 	
@@ -66,19 +68,19 @@ html {
 	color:white;
 	text-align: center;
 	margin-left: 15px;
-	padding-top:60px;
-	font-size: 44px;
-	font-family: 'Indie Flower', cursive;
+	padding-top:80px;
+	font-size: 32px;
+	font-family: 'Rock Salt', cursive;
 }
 
 .players {
 	position: relative;
 	color: white;
-	font-family: 'Pacifico', cursive;
+	font-family: 'Rock Salt', cursive;
 	float: left;
-	font-size: 34px;
+	font-size: 28px;
 	margin-left: 50px;
-	top: -420px;
+	top: -370px;
 }
 
 .players:hover {
@@ -95,7 +97,10 @@ html {
 	margin:auto;
 	position: relative;
 	display:none;
-	background: url(bg1.png);
+	background: url(bg2.png);
+	-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
 	
 	
 }
@@ -106,18 +111,18 @@ html {
 	text-align: center;
 	margin-left: 15px;
 	padding-top:60px;
-	font-size: 44px;
-	font-family: 'Indie Flower', cursive;
+	font-size: 34px;
+	font-family: 'Rock Salt', cursive;
 }
 
 .symbols {
 	position: relative;
 	color: white;
-	font-family: 'Pacifico', cursive;
+	font-family: 'Indie Flower', cursive;
 	float: left;
-	font-size: 34px;
+	font-size: 74px;
 	margin-left: 150px;
-	top: -350px;
+	top: -310px;
 }
 
 .symbols:hover {
@@ -126,42 +131,42 @@ html {
 }
 
 #player-one-win {
-	font-family: 'Indie Flower', cursive;
+font-family: 'Anton', sans-serif;
 	color: gold;
 	font-size: 80px;
 	text-align:center;
 	margin-left:auto;
 	margin-right:auto;
 	position:relative;
-	top:-400px;
+	top:-320px;
 	width:300px;
 	z-index:5;
 	display:none;
 }
 
 #player-two-win {
-	font-family: 'Indie Flower', cursive;
+font-family: 'Anton', sans-serif;
 	color: gold;
 	font-size: 80px;
 	text-align:center;
 	margin-left:auto;
 	margin-right:auto;
 	position:relative;
-	top:-400px;
+	top:-320px;
 	width:300px;
 	z-index:5;
 	display:none;
 }
 
 #draw {
-	font-family: 'Indie Flower', cursive;
+font-family: 'Anton', sans-serif;
 	color: gold;
 	font-size: 80px;
 	text-align:center;
 	margin-left:auto;
 	margin-right:auto;
 	position:relative;
-	top:-400px;
+	top:-320px;
 	width:300px;
 	z-index:5;
 	display:none;
