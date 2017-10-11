@@ -85,6 +85,7 @@ $(document).ready(function (){
 						playerTwoSymbol = "X";
 					}
 		$("#choose-symbol-box").css('display','none');
+		$(".fields").css('border','1px solid white');
 	});
 	}
 	
@@ -131,9 +132,11 @@ $(document).ready(function (){
 		var field = event.target.id;
 			
 		if(controlNumber === 0){
+			
 			playerMoves(playerOneFields, playerOneSymbol, 1, "One", field);
 			console.log("playerOneMoves");
-		} else if(controlNumber === 1){
+		} else if(controlNumber === 1 && result !== "win"){
+			setTimeout(function() {
 			combinedResults = playerOneFields.concat(playerTwoFields);
 			do{
 			var ran = Math.floor((Math.random() * (8)) + 0);
@@ -167,6 +170,7 @@ $(document).ready(function (){
 					result = "win";
 				} 
 			}
+			}, 500);
 			controlNumber = 0;
 		}
 		fieldsClicked++;	//increment number of field clicked

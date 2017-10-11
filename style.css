@@ -1,26 +1,29 @@
 html {
     height: 100%;
-	background-color:gray;
+	background: url(back.jpg);
 	
 }
 
 .container {
-	background-color:grey;
+	
 	margin: auto;
 	min-height: 100%;
     height: 100%;
+	background: url(back.jpg);
 }
 
 #game-box {
 	height: 600px;
 	width: 548px;
 	background-color: white;
-	margin-top: 100px;
+	margin-top: 50px;
 	margin-left: auto;
 	margin-right: auto;
 	-webkit-box-shadow: 7px 10px 5px -2px rgba(0,0,0,0.47);
 	-moz-box-shadow: 7px 10px 5px -2px rgba(0,0,0,0.47);
 	box-shadow: 7px 10px 5px -2px rgba(0,0,0,0.47);
+	background: url(bg2.png);
+	
 	
 
 }
@@ -28,13 +31,16 @@ html {
 .fields {
 	width: 170px;
 	height: 170px;
-	border: 1px solid;
+	color: white;
 	float: left;
 	text-align: center;
 	font-size: 194px;
 	line-height: 180px;
 	font-family: 'Indie Flower', cursive;
 	cursor:pointer;
+	
+	
+	
 }
 
 .first-row {
@@ -49,7 +55,10 @@ html {
 	background-color: black;
 	height: 600px;
 	width: 548px;
+	
+    background: url(bg2.png);
 	margin:auto;
+
 	
 	
 	
@@ -60,19 +69,19 @@ html {
 	color:white;
 	text-align: center;
 	margin-left: 15px;
-	padding-top:60px;
-	font-size: 44px;
-	font-family: 'Indie Flower', cursive;
+	padding-top:80px;
+	font-size: 32px;
+	font-family: 'Rock Salt', cursive;
 }
 
 .players {
 	position: relative;
 	color: white;
-	font-family: 'Pacifico', cursive;
+	font-family: 'Rock Salt', cursive;
 	float: left;
-	font-size: 34px;
+	font-size: 28px;
 	margin-left: 50px;
-	top: -450px;
+	top: -370px;
 }
 
 .players:hover {
@@ -89,6 +98,10 @@ html {
 	margin:auto;
 	position: relative;
 	display:none;
+	background: url(bg2.png);
+	-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
 	
 	
 }
@@ -99,18 +112,18 @@ html {
 	text-align: center;
 	margin-left: 15px;
 	padding-top:60px;
-	font-size: 44px;
-	font-family: 'Indie Flower', cursive;
+	font-size: 34px;
+	font-family: 'Rock Salt', cursive;
 }
 
 .symbols {
 	position: relative;
 	color: white;
-	font-family: 'Pacifico', cursive;
+	font-family: 'Indie Flower', cursive;
 	float: left;
-	font-size: 34px;
+	font-size: 74px;
 	margin-left: 150px;
-	top: -350px;
+	top: -310px;
 }
 
 .symbols:hover {
@@ -119,42 +132,42 @@ html {
 }
 
 #player-one-win {
-	font-family: 'Indie Flower', cursive;
+font-family: 'Anton', sans-serif;
 	color: gold;
 	font-size: 80px;
 	text-align:center;
 	margin-left:auto;
 	margin-right:auto;
 	position:relative;
-	top:-400px;
+	top:-320px;
 	width:300px;
 	z-index:5;
 	display:none;
 }
 
 #player-two-win {
-	font-family: 'Indie Flower', cursive;
+font-family: 'Anton', sans-serif;
 	color: gold;
 	font-size: 80px;
 	text-align:center;
 	margin-left:auto;
 	margin-right:auto;
 	position:relative;
-	top:-400px;
+	top:-320px;
 	width:300px;
 	z-index:5;
 	display:none;
 }
 
 #draw {
-	font-family: 'Indie Flower', cursive;
+font-family: 'Anton', sans-serif;
 	color: gold;
 	font-size: 80px;
 	text-align:center;
 	margin-left:auto;
 	margin-right:auto;
 	position:relative;
-	top:-400px;
+	top:-320px;
 	width:300px;
 	z-index:5;
 	display:none;
