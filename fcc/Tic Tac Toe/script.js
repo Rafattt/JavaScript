@@ -85,6 +85,7 @@ $(document).ready(function (){
 						playerTwoSymbol = "X";
 					}
 		$("#choose-symbol-box").css('display','none');
+		$(".fields").css('border','1px solid white');
 	});
 	}
 	
@@ -116,6 +117,7 @@ $(document).ready(function (){
 			$("#draw").css('display','block');
 						setTimeout(function() {
 							$("#draw").css('display','none');
+							restart();
 						}, 2000);
 						
 						restart();
@@ -130,9 +132,11 @@ $(document).ready(function (){
 		var field = event.target.id;
 			
 		if(controlNumber === 0){
+			
 			playerMoves(playerOneFields, playerOneSymbol, 1, "One", field);
 			console.log("playerOneMoves");
-		} else if(controlNumber === 1){
+		} else if(controlNumber === 1 && result !== "win"){
+			setTimeout(function() {
 			combinedResults = playerOneFields.concat(playerTwoFields);
 			do{
 			var ran = Math.floor((Math.random() * (8)) + 0);
@@ -155,13 +159,18 @@ $(document).ready(function (){
 					return playerTwoFields.indexOf(v) > -1;
 				});
 				if(res.length === 3){ //if all 3 elements from winConditions array are in player(One/Two)Field player wins
+				for(let j = 0;j<9;j++){
+				$('#'+emptyFields[j]).css('pointer-events', 'none');
+				}
 					$("#player-two-win").css('display','block');
 						setTimeout(function() {
 							$("#player-two-win").css('display','none');
+							restart();
 						}, 2000);
 					result = "win";
 				} 
 			}
+			}, 500);
 			controlNumber = 0;
 		}
 		fieldsClicked++;	//increment number of field clicked
