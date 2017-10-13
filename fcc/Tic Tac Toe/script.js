@@ -8,6 +8,8 @@ $(document).ready(function (){
 	var playerOneFields = [];	//array for storing names of field marked by player one
 	var playerTwoFields = [];	//array for storing names of field marked by player two
 	var result = "";
+	var playerOneScore = 0;
+	var playerTwoScore = 0;
 	var winConditions = [	//cominations of wining fields
 		["a1","a2","a3"],
 		["a1","b1","c1"],
@@ -62,6 +64,8 @@ $(document).ready(function (){
 					$("#player-one-win").css('display','block');
 						setTimeout(function() {
 							$("#player-one-win").css('display','none');
+							playerOneScore++;
+							$('#score-player-one').html(playerOneScore);
 							restart();
 						}, 2000);
 					
@@ -91,6 +95,7 @@ $(document).ready(function (){
 	
 	var game = $('.players').click(function(event){	//
 		numberOfPlayers = event.target.id;
+		
 		
 		if(numberOfPlayers === 'one-player'){
 			singlePlayerGame();
@@ -165,6 +170,8 @@ $(document).ready(function (){
 					$("#player-two-win").css('display','block');
 						setTimeout(function() {
 							$("#player-two-win").css('display','none');
+							playerTwoScore++;
+							$('#score-player-two').html(playerTwoScore);
 							restart();
 						}, 2000);
 					result = "win";
@@ -219,5 +226,17 @@ $(document).ready(function (){
 			
 			
 		}
+		
+		
+			$('#restart').click(function(){
+				restart();
+				playerOneScore = 0;
+				playerTwoScore = 0;
+				$('#score-player-two').html(playerTwoScore);
+				$('#score-player-one').html(playerOneScore);
+				$("#number-of-players-box").css('display','block');
+				$(".fields").css('border','none');
+	});
+		
 	
 });

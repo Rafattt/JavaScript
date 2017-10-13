@@ -3,14 +3,15 @@
 	<meta charset="utf-8"/>
 	<title>Tic Tac Toe</title>
 	<link href="https://fonts.googleapis.com/css?family=Indie+Flower|Pacifico|Rock+Salt|Anton" rel="stylesheet">
-	
+
 	<link rel="stylesheet" href="style.css">
 	<script src="jquery-3.2.1.min.js"></script>
 	<script src="script.js"></script>
 </html>
 <body>
-	<div class="container">
-		<div class="col-md-6 col-md-offset-6" id="game-box">
+	<div id="container">
+	
+		<div id="game-box">
 			<div class="fields first-row first-column" id="a1"></div>
 			<div class="fields first-row" id="a2"></></div>
 			<div class="fields first-row" id="a3"></></div>
@@ -43,6 +44,16 @@
 		</div><!--game-box-->
 		<div id="scoreboard">
 		<div id="score-title">Score</div>
+		<div class="player-score">Player One:</div>
+		<div class="player-score">Player Two:</div>
+		<div class="score" id="score-player-one">0</div>
+		<div class="score" id="score-player-two">0</div>
+		
 		</div>
+		<div id="restart-frame">
+			
+				<button type="button" id="restart">Restart</button>
+		
+		</div><!--restart-frame-->
 	</div><!--container-->
 </body>
