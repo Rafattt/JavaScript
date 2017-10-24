@@ -8,11 +8,8 @@ $(document).ready(function (){
 	var playerOneFields = [];	//array for storing names of field marked by player one
 	var playerTwoFields = [];	//array for storing names of field marked by player two
 	var result = "";
-	var playerOneRes = 0;
 	var playerOneScore = 0;
 	var playerTwoScore = 0;
-	var nextCPUmove;
-	
 	var winConditions = [	//cominations of wining fields
 		["a1","a2","a3"],
 		["a1","b1","c1"],
@@ -35,9 +32,9 @@ $(document).ready(function (){
 			}
 			$("#number-of-players-box").css('display','none');
 			$("#choose-symbol-box").css('display','block');
+			console.log("here");
 			symbolsMenu();
 			clickedFieldSinglePlayer();
-			
 		}
 		
 		function twoPlayersGame(){	//multiplayer game
@@ -48,29 +45,49 @@ $(document).ready(function (){
 		}
 		//playerMoves function writing player symbol on clicked field and making this field inactive
 		function playerMoves(player, symbol, control, playerNumber, field){
-			console.log("playerMoves function starts here");
 			$('#'+field).html(symbol);
-			
+			var lastSymbol = field;
 			$('#'+field).css('pointer-events', 'none');
+			console.log("here");
 			player.push(field);
 			controlNumber = control;	//changing control number to signalize that turn is over
 			
-			console.log("controlNumber "+controlNumber);
-			console.log("playerOneFields "+playerOneFields);
-			
-			checkIfWin(player);
-			
-
-			
-			
-			
-			
+			for(let i = 0; i < 8;i++){ //checking if winConditions and player(One/Two)Field have common elements
 				
-			
-			
-			
-			
-			
+				var res = winConditions[i].filter(function(v){
+					return player.indexOf(v) > -1;
+				});
+				if(res.length === 3){ //if all 3 elements from winConditions array are in player(One/Two)Field player wins
+					for(let i = 0; i<=emptyFields.length; i++){
+						$('#'+emptyFields[i]).css('pointer-events', 'none');
+					}
+					if(controlNumber === 1){
+						$("#player-one-win").css('display','block');
+						setTimeout(function() {
+							$("#player-one-win").css('display','none');
+							playerOneScore++;
+							$('#score-player-one').html(playerOneScore);
+							restart();
+						}, 2000);
+					} else {
+						$("#player-two-win").css('display','block');
+						setTimeout(function() {
+							$("#player-two-win").css('display','none');
+							playerTwoScore++;
+							$('#score-player-two').html(playerTwoScore);
+							restart();
+						}, 2000);
+					}
+					
+					
+					result = "win";
+					
+					
+	
+					res = "";
+					
+				} 
+			}
 		}
 		
 	function symbolsMenu(){ //choosing symbol 'X' or 'O'
@@ -90,11 +107,11 @@ $(document).ready(function (){
 	var game = $('.players').click(function(event){	//
 		numberOfPlayers = event.target.id;
 		
-
+		console.log(numberOfPlayers);
 		if(numberOfPlayers === 'one-player'){
 			singlePlayerGame(numberOfPlayers);
 		} else if(numberOfPlayers === 'two-players'){
-
+			console.log("2 players");
 			twoPlayersGame();
 		}
 	});
@@ -104,10 +121,10 @@ $(document).ready(function (){
 			
 		if(controlNumber === 0){
 			playerMoves(playerOneFields, playerOneSymbol, 1, "One", field);
-			
+			console.log("playerOneMoves");
 		} else if(controlNumber === 1){
 			playerMoves(playerTwoFields, playerTwoSymbol, 0, "Two", field);
-		
+			console.log("playerTwoMoves");
 		}
 		fieldsClicked++;	//increment number of field clicked
 	
@@ -121,76 +138,38 @@ $(document).ready(function (){
 						
 						restart();
 					$('#'+lastField).html("");
-					var res = "";
+					res = "";
 		}
 	});
 	
-	function clickedFieldSinglePlayer(){
-		$('.fields').click(function(event){
+	function clickedFieldSinglePlayer(single){
+		do{
+	$('.fields').click(function(event){	//checking which field was clicked and getting id of this field
+	console.log("clickedFieldSinglePlayer");
 		var field = event.target.id;
-		
-		
+			
 		if(controlNumber === 0){
 			
 			playerMoves(playerOneFields, playerOneSymbol, 1, "One", field);
-			for(let i = 0; i < 8;i++){ //checking if winConditions and player(One/Two)Field have common elements
-			
-				
-				var res = winConditions[i].filter(function(v){
-					console.log("player "+player);
-					return playerOneFields.indexOf(v) > -1;
-				});
-	
-				if(res.length === 3){
-					document.write("3gwgwg");
-				}
-			}
-			
-							
+			console.log("playerOneMoves");
 		} else if(controlNumber === 1 && result !== "win"){
-			
 			setTimeout(function() {
-				//==========hard difficulty algorithm starts=======
-					
-						
-					
-					combinedResults = playerOneFields.concat(playerTwoFields); //store information about used fields
-	
-					
-					
-						do{ //do this while field wasn't used before and there are still empty fields
-						
-						checkIfOneFieldLeft();
-						
-						var empty =  diffArray(emptyFields,combinedResults);
-						
-						
-						
-						if(playerOneRes === 1 && empty.indexOf(nextCPUmove) !== -1){
-							
-							
-							
-							$('#'+nextCPUmove).html(playerTwoSymbol); //print player symbol on selected field
-									$('#'+nextCPUmove).css('pointer-events', 'none'); //disable selected field
-									playerTwoFields.push(nextCPUmove); //add random array to used fields by CPU array
-									playerOneRes = 0;
-						}  else {
-							
-							
-					
-							let ran = empty.length-1;
-							var randomField = empty[Math.floor((Math.random() * (ran)) + 0)]; //random field choosen by CPU
-							
-								
-									$('#'+randomField).html(playerTwoSymbol); //print player symbol on selected field
-									$('#'+randomField).css('pointer-events', 'none'); //disable selected field
-									playerTwoFields.push(randomField); //add random array to used fields by CPU array
-									
-						}
-						}while(combinedResults.indexOf(randomField) != -1 && combinedResults.length<=8);
-						
-				//==========hard difficulty algorithm ends=======
-				checkIfWin(playerOneFields);
+			combinedResults = playerOneFields.concat(playerTwoFields);
+			do{
+			var ran = Math.floor((Math.random() * (8)) + 0);
+			var ran2 = Math.floor((Math.random() * (2)) + 0);
+			var ff = winConditions[ran][ran2];
+			if(combinedResults.indexOf(ff) == -1){
+			$('#'+ff).html(playerTwoSymbol);
+			console.log(ff);
+			$('#'+ff).css('pointer-events', 'none');
+			console.log("here");
+			playerTwoFields.push(ff);
+			console.log("playerTwoFields "+playerTwoFields);
+			} else {
+				console.log(ff+" used");
+			}
+			}while(combinedResults.indexOf(ff) != -1 && combinedResults.length<=8);
 			for(let i = 0; i < 8;i++){ //checking if winConditions and player(One/Two)Field have common elements
 				
 				var res = winConditions[i].filter(function(v){
@@ -212,10 +191,11 @@ $(document).ready(function (){
 				} 
 			}
 			}, 500);
-				controlNumber = 0;
+			
+			controlNumber = 0;
 		}
 		fieldsClicked++;	//increment number of field clicked
-	
+		
 		if(fieldsClicked === 9 && result !="win"){	//if nobody wins and all field 990 has been clicked it is draw
 			
 			$("#draw").css('display','block');
@@ -224,10 +204,9 @@ $(document).ready(function (){
 							restart();
 						}, 2000);
 		}
-		
-		
-		
 	});
+	}while(single === 'one-player');
+		
 	}
 	
 	
@@ -254,105 +233,6 @@ $(document).ready(function (){
 			$('#restart').click(function(){
 				 location.reload();
 	});
-	
-	function checkIfOneFieldLeft() {
-		console.log("checkIfOneFieldLeft()");
-		var playerOne = playerOneFields;
-		
-		for(let j = 0; j < 8;j++){ //checking if winConditions and player(One/Two)Field have common elements
-				
-								var res2 = winConditions[j].filter(function(a){
-									return playerOne.indexOf(a) > -1;
-								});
-								
-								if(res2.length === 2){
-									
-									nextCPUmove = winConditions[j];
-									for(let j = 0; j<2;j++){
-										nextCPUmove.splice(nextCPUmove.indexOf(res2[j]), 1)
-									}
-									
-									nextCPUmove = nextCPUmove.toString();
-									
-									
-									playerOneRes = 1;
-									console.log("playerOneFields "+playerOneFields);
-									
-								} else {
-									
-									
-									
-						
-								}
-								
-							}
-		return;
-	}
-	
-	function checkIfWin(player){
-		for(let i = 0; i < 8;i++){ //checking if winConditions and player(One/Two)Field have common elements
-			
-				
-				var res = winConditions[i].filter(function(v){
-					console.log("player "+player);
-					return player.indexOf(v) > -1;
-				});
-	
-				if(res.length === 3){ //if all 3 elements from winConditions array are in player(One/Two)Field player wins
-				
-					for(let i = 0; i<=emptyFields.length; i++){
-						$('#'+emptyFields[i]).css('pointer-events', 'none');
-					}
-					
-					console.log("res "+res);
-					if(controlNumber === 1){
-						$("#player-one-win").css('display','block');
-						setTimeout(function() {
-							$("#player-one-win").css('display','none');
-							playerOneScore++;
-							$('#score-player-one').html(playerOneScore);
-							console.log("1111111111111111111111111111111111111111111111111111");
-							result = "win";
-							restart();
-							
-						}, 2000);
-					} else if(controlNumber === 0) {
-						$("#player-two-win").css('display','block');
-						setTimeout(function() {
-							$("#player-two-win").css('display','none');
-							playerTwoScore++;
-							$('#score-player-two').html(playerTwoScore);
-							console.log("22222222222222222222222222222222222222222222222222");
-							result = "win";
-							restart();
-							
-						}, 2000);
-					}
-					
-					
-					result = "win";
-					
-					
-	
-					res = "";
-					
-				} else {
-					
-				}
-				
-			}
-			
-	}
-	
-	function diffArray(a, b) {
-  var seen = [], diff = [];
-  for ( var i = 0; i < b.length; i++)
-      seen[b[i]] = true;
-  for ( var i = 0; i < a.length; i++)
-      if (!seen[a[i]])
-          diff.push(a[i]);
-  return diff;
-}
 		
 	
 });

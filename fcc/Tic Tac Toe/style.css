@@ -1,18 +1,35 @@
 
-html {
-    height: 100%;
+
+html, body {
+	position:fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
 	background: url(back.jpg);
 
 	
 }
+#container1 {
 
-#container {
 	
-	margin: auto;
-	min-height: 100%;
-    height: 100%;
+    height: 700px;
+	background: url(back.jpg);
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	
+}
+
+#container2 {
+	
+	margin-left: auto;
+	margin-right: auto;
+	
+    height: 700px;
 	background: url(back.jpg);
 	width: 900px;
+	
 }
 
 #game-box {
@@ -93,7 +110,45 @@ html {
 }
 
 /*--------------------------------------------------------------------*/
+/*------------difficulty level starts here------------------------------*/
+#difficulty-level-box {
+	background-color: black;
+	height: 600px;
+	width: 548px;
+	display:none;
+    background: url(bg2.png);
+	margin:auto;
 
+	
+	
+	
+}
+
+#difficulty-level-title {
+	position: absolute;
+	color:white;
+	text-align: center;
+	margin-left: 15px;
+	padding-top:80px;
+	font-size: 32px;
+	font-family: 'Rock Salt', cursive;
+}
+
+.difficulty {
+	position: relative;
+	color: white;
+	font-family: 'Rock Salt', cursive;
+	float: left;
+	font-size: 28px;
+	margin-left: 50px;
+	top: -370px;
+}
+
+.difficulty:hover {
+	cursor:pointer;	
+	color:gray;
+}
+/*------------difficulty level ends here------------------------------*/
 #choose-symbol-box {
 	background-color: black;
 	height: 600px;
@@ -134,7 +189,7 @@ border-radius: 10px;
 	color:gray;
 }
 
-#player-one-win {
+#you-win {
 font-family: 'Anton', sans-serif;
 	color: gold;
 	font-size: 80px;
@@ -148,7 +203,7 @@ font-family: 'Anton', sans-serif;
 	display:none;
 }
 
-#player-two-win {
+#cpu-win {
 font-family: 'Anton', sans-serif;
 	color: gold;
 	font-size: 80px;
@@ -161,6 +216,35 @@ font-family: 'Anton', sans-serif;
 	z-index:5;
 	display:none;
 }
+
+#player-one-win {
+font-family: 'Anton', sans-serif;
+	color: gold;
+	font-size: 80px;
+	text-align:center;
+	margin-left:auto;
+	margin-right:auto;
+	position:relative;
+	top:-320px;
+	width:500px;
+	z-index:5;
+	display:none;
+}
+
+#player-two-win {
+font-family: 'Anton', sans-serif;
+	color: gold;
+	font-size: 80px;
+	text-align:center;
+	margin-left:auto;
+	margin-right:auto;
+	position:relative;
+	top:-320px;
+	width:500px;
+	z-index:5;
+	display:none;
+}
+
 
 #draw {
 font-family: 'Anton', sans-serif;
