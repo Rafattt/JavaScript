@@ -1,0 +1,99 @@
+1 Chose number of players
+2 Chose difficulty
+3 Chose symbol
+4 Chose symbol
+5 Chose symbol
+6 Chose symbol
+7 Whose turn is it?
+8 Mark empty field, set status to inactive and change control number to second player, at the end check if player one won
+9 Mark all empty fields as inactive to block CPU turn, show comunicate aboute game result and wait few seconds, add one point for Player One
+10 Did player won?
+11 Get random number smaller than number of empty fields and choose field from empty fields array. Mark empty field, set status to inactive and change control number to first player, at the end check if CPU won
+12 Did CPU won?
+13 Mark all empty fields as inactive to block Player One turn, show comunicate aboute game result and wait few seconds, add one pont for CPU
+14 Whose turn is it?
+15 Mark empty field, set status to inactive and change control number to second player, at the end check if player one won
+16 Mark all empty fields as inactive to block CPU turn, show comunicate aboute game result and wait few seconds, add one point for Player One
+17 Did player won?
+18 Did CPU won?
+19 Mark all empty fields as inactive to block Player One turn, show comunicate aboute game result and wait few seconds, add one pont for CPU
+20 Get random number smaller than number of empty fields and choose field from empty fields array. Mark empty field, set status to inactive and change control number to first player, at the end check if CPU won
+21 Does Player One have one symbol left to win?
+22 Find which field Player One can use to win and put symbol on that field to block Player One
+23 Whose turn is it?
+24 Mark empty field, set status to inactive and change control number to second player, at the end check if player one won
+25 Mark all empty fields as inactive to block CPU turn, show comunicate aboute game result and wait few seconds, add one point for Player One
+26 Did player won?
+27 Did CPU won?
+28 Mark all empty fields as inactive to block Player One turn, show comunicate aboute game result and wait few seconds, add one pont for CPU
+29 Get random number smaller than number of empty fields and choose field from empty fields array. Mark empty field, set status to inactive and change control number to first player, at the end check if CPU won
+30 Does Player One have one symbol left to win?
+31 Find which field Player One can use to win and put symbol on that field to block Player One
+32 Does CPU have one symbol left to win?
+33 Find which field CPU can use to win and put symbol on that field
+34 Mark empty field, set status to inactive and change control number to second player, at the end check if player one won
+35 Mark all empty fields as inactive to block Player Two turn, show comunicate aboute game result and wait few seconds, add one point for Player One
+36 Did player won?
+37 Whose turn is it?
+38 Mark empty field, set status to inactive and change control number to first player, at the end check if player two won
+39 Did player won?
+40 Mark all empty fields as inactive to block Player One turn, show comunicate aboute game result and wait few seconds, add one point for Player Two
+#
+1 2 One Player
+1 3 Two Players
+2 4 Easy
+2 5 Normal
+2 6 Hard
+4 7
+7 8 Player One
+8 10
+10 9 Yes
+10 7 No
+7 11 CPU
+11 12
+12 7 No
+9 7 Start another round
+13 7 Start another round
+12 13 Yes
+14 15 Player One
+15 17
+17 16 Yes
+17 14 No
+20 18
+18 14 No
+16 14 Start another round
+19 14 Start another round
+18 19 Yes
+5 14
+14 21 CPU
+21 20 No
+21 22 Yes
+22 18
+23 24 Player One
+24 26
+26 25 Yes
+26 23 No
+29 27
+27 23 No
+25 23 Start another round
+28 23 Start another round
+27 28 Yes
+30 29 No
+30 31 Yes
+31 27
+6 23
+23 32 CPU
+32 30 No
+32 33 Yes
+33 28 CPU WON
+34 36
+36 35 Yes
+3 37
+37 34 Player One
+36 37 No
+35 37 Start another round
+37 38 Player Two
+38 39
+39 40 Yes
+39 37 No
+40 37 Start another round
