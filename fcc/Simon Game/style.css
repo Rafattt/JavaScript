@@ -1,0 +1,144 @@
+html, body {
+	background-color: black;
+}
+
+#simon-frame {
+	border-radius: 50%;
+	width:500px;
+	height:500px;
+	background-color:gray;
+	margin-left:auto;
+	margin-right: auto;
+	margin-top:100px;
+	
+}
+
+#green-field {
+	background-color: green;
+	width: 250px;
+	height: 250px;
+	float: left;
+	border: solid 8px;
+	border-color: #333333;
+	-webkit-border-top-left-radius: 240px;
+	-moz-border-radius-topleft: 240px;
+	border-top-left-radius: 240px;
+}
+
+#red-field {
+	background-color: red;
+	width: 250px;
+	height: 250px;
+	float: left;
+	border: solid 8px;
+	border-color: #333333;
+	-webkit-border-top-right-radius: 240px;
+	-moz-border-radius-topright: 240px;
+	border-top-right-radius: 240px;
+}
+
+#yellow-field {
+	background-color: yellow;
+	width: 250px;
+	height: 250px;
+	float: left;
+	border: solid 8px;
+	border-color: #333333;
+	-webkit-border-bottom-left-radius: 240px;
+	-moz-border-radius-bottomleft: 240px;
+	border-bottom-left-radius: 240px;
+}
+
+#blue-field {
+	background-color: blue;
+	width: 250px;
+	height: 250px;
+	float: left;
+	border: solid 8px;
+	border-color: #333333;
+	-webkit-border-bottom-right-radius: 240px;
+	-moz-border-radius-bottomright: 240px;
+	border-bottom-right-radius: 240px;
+}
+
+.field {
+	cursor:pointer;
+	
+}
+
+.field:active {
+	background-color: white!important;
+
+	
+}
+
+
+
+
+#simon-circle {
+	position:absolute;
+	border-radius: 50%;
+	width:250px;
+	height:250px;
+	background-color:lightgrey;
+	margin-left:125px;
+	margin-right: 125px;
+	margin-top:125px;
+	border: solid 16px;
+}
+
+#title {
+	font-size: 44px;
+	font-family: 'Shrikhand', cursive;
+	text-align: center;
+	padding-top: 30px;
+	
+}
+
+#count {
+	height:40px;
+	width:60px;
+	background-color: darkred;
+	border-radius: 20%;
+	margin-left: 10px;
+	border: 4px solid;
+	float: left;
+}
+
+#start {
+	height:40px;
+	width:40px;
+	background-color: red;
+	border-radius: 50%;
+	margin-left: 20px;
+	border: 4px solid;
+	float: left;
+}
+
+#strict {
+	height:40px;
+	width:40px;
+	background-color: yellow;
+	border-radius: 50%;
+	margin-left: 25px;
+	border: 4px solid;
+	float: left;
+}
+
+.menu-buttons{
+	cursor:pointer
+}
+
+.menu-buttons:hover {
+	background-color:white!important;
+}
+
+.titles {
+	float:left;
+	margin-left:18px;
+	font-family: 'Shrikhand', cursive;
+}
+
+#title-start {
+	margin-left: 25px;
+}
