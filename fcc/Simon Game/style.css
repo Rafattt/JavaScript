@@ -10,7 +10,6 @@ html, body {
 	margin-left:auto;
 	margin-right: auto;
 	margin-top:100px;
-	
 }
 
 #green-field {
@@ -98,7 +97,7 @@ html, body {
 #count {
 	height:40px;
 	width:60px;
-	background-color: darkred;
+	background-color: #7b0303;
 	border-radius: 20%;
 	margin-left: 10px;
 	border: 4px solid;
@@ -141,4 +140,83 @@ html, body {
 
 #title-start {
 	margin-left: 25px;
+}
+
+#strict-mode-led {
+	width: 10px;
+	height: 10px;
+	background-color: black;
+	border-radius: 50%;
+	border: 1px solid;
+	position: absolute;
+	left: 190px;
+	top: 80px;
+	
+}
+
+
+
+
+/** Switch
+ -------------------------------------*/
+
+ #switch-div{
+	 margin-left:90px;
+	 margin-top: 75px;
+ }
+ 
+.switch input {
+  position: absolute;
+  opacity: 0;
+}
+
+/**
+ * 1. Adjust this to size
+ */
+
+.switch {
+  display: inline-block;
+  font-size: 20px; /* 1 */
+  height: 1em;
+  width: 2em;
+  background: #BDB9A6;
+  border-radius: 1em;
+}
+
+.switch div {
+  height: 1em;
+  width: 1em;
+  border-radius: 1em;
+  background: #FFF;
+  box-shadow: 0 0.1em 0.3em rgba(0,0,0,0.3);
+  -webkit-transition: all 300ms;
+     -moz-transition: all 300ms;
+          transition: all 300ms;
+}
+
+.switch input:checked + div {
+  -webkit-transform: translate3d(100%, 0, 0);
+     -moz-transform: translate3d(100%, 0, 0);
+          transform: translate3d(100%, 0, 0);
+}
+
+.switch-button-off{
+	position:absolute;
+	left:50px;
+	font-family: 'Shrikhand', cursive;
+}
+
+.switch-button-on{
+	position:absolute;
+	left:145px;
+	bottom: 32px;
+	font-family: 'Shrikhand', cursive;
+}
+
+#count-numbers {
+	color:red;
+	font-family: 'Orbitron', sans-serif;
+	font-size: 26px;
+	text-align:center;
+	font-weight: bold;
 }
