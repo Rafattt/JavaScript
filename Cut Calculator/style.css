@@ -1,0 +1,312 @@
+body, html {
+	background-color: black;
+}
+
+.container {
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#88bfe8+0,70b0e0+100;Blue+3D+%2317 */
+background: #88bfe8; /* Old browsers */
+background: -moz-linear-gradient(top, #88bfe8 0%, #70b0e0 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #88bfe8 0%,#70b0e0 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #88bfe8 0%,#70b0e0 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#88bfe8', endColorstr='#70b0e0',GradientType=0 ); /* IE6-9 */
+	margin-top: 20px;-webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+	
+	
+}
+
+#bottom-trim {
+	color:red;
+	height:20px;
+	width:100px;
+	background-color: white;
+	margin-left: 40px;
+}
+
+#top-trim {
+	color:red;
+	height:20px;
+	width:100px;
+	background-color: white;
+	margin-left: 40px;
+}
+
+.first-row {
+	background-color: white;
+	height: 200px;
+	margin-top: 0px;-webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+
+	
+}
+
+#logo {
+	margin-top: 10px;
+	
+}
+
+#cut-title {
+	font-family: 'Roboto Mono', monospace;
+	font-size: 80px;
+	color: #831e0c;
+	text-shadow: 4px 4px 2px rgba(150, 150, 150, 1);
+	position: absolute;
+	right: 600px;
+}
+
+#calculator-title {
+	font-family: 'Roboto Mono', monospace;
+	font-size: 80px;
+	margin-bottom: 50px;
+	position: absolute;
+	top: 80px;
+	right: 130px;
+	color: #831e0c;
+	text-shadow: 4px 4px 2px rgba(150, 150, 150, 1);
+}
+
+#door-container {
+	height: 340px;
+	margin-top:40px;
+	margin-bottom:40px;
+
+}
+
+#door {
+	margin-left: auto;
+	margin-right:auto;
+	background-color:white;
+	height: 267px;
+	width:100px;
+	border: solid 1px;
+	margin-top:93px;
+	-webkit-transition: all .8s ease;
+-moz-transition: all .8s ease;
+-ms-transition: all .8s ease;
+-o-transition: all .8s ease;
+transition: all .8s ease;
+}
+
+#hole {
+	border-radius: 50%;
+	width: 10px;
+	height: 10px; 
+	background-color: black;
+	position: absolute;
+	top: 235px;
+	left: 155px;
+	
+}
+
+#bottom-cut-draw {
+	opacity: 0.5;
+	background-color: red;
+	width: 98px;
+	position:absolute;
+	top: 359px;
+		-webkit-transition: all .8s ease;
+-moz-transition: all .8s ease;
+-ms-transition: all .8s ease;
+-o-transition: all .8s ease;
+transition: all .8s ease;
+}
+
+#top-cut-draw {
+	opacity: 0.5;
+	background-color: red;
+	width: 98px;
+	position:absolute;
+	height: 0px;
+	margin-top: 0px;
+		-webkit-transition: all .8s ease;
+-moz-transition: all .8s ease;
+-ms-transition: all .8s ease;
+-o-transition: all .8s ease;
+transition: all .8s ease;
+}
+
+#door-height {
+	height: 267px;
+	position:absolute;
+	width:20px;
+	top:92px;
+	left:250px;
+	border-style: dashed;
+	border-color: red;
+	border-left: 0px;
+	-webkit-transition: all .8s ease;
+-moz-transition: all .8s ease;
+-ms-transition: all .8s ease;
+-o-transition: all .8s ease;
+transition: all .8s ease;
+}
+
+#height-center {
+	font-family: 'Roboto Mono', monospace;
+	color: red;
+	font-size:24px;
+	position: absolute;
+	top: 210px;
+	left: 280px;
+}
+
+.menu-text {
+	color: black;
+	font-size:24px;
+	font-family: 'Roboto Mono', monospace;
+}
+
+#selectHeight {
+
+	font-size:24px;
+	font-family: 'Roboto Mono', monospace;
+}
+
+#height-text{
+	margin-top:40px;
+}
+
+#bottom-text {
+
+	margin-top:10px;
+}
+
+#bottom {
+	position: absolute;
+	top:73px;
+	left:170px;
+	width:50px;
+}
+
+#top-text {
+
+	margin-top:10px;
+}
+
+#top {
+	position: absolute;
+	top:119px;
+	left:130px;
+	width:50px;
+	pointer-events: none;
+	background-color: lightgrey;
+}
+
+#checkBox {
+	position: absolute;
+	top:79px;
+	left: 230px;
+}
+
+#checkbox-text {
+	position: absolute;
+	top:79px;
+	left: 250px;
+	color: black;
+}
+
+#final-text {
+	margin-top:50px;
+	margin-left: 50px;
+	font-size:32px;
+}
+
+#final {
+	height:100px;
+	width:300px;
+	font-size:72px;
+	text-align: center;
+	font-family: 'Roboto Mono', monospace;
+	color: darkred;
+}
+
+#cut-text-bottom {
+
+	font-family: 'Roboto Mono', monospace;
+	color: red;
+	font-size: 16px;
+	text-align: center;
+	margin-top: -20px;
+	display: none;
+}
+
+#cut-text-top {
+
+	font-family: 'Roboto Mono', monospace;
+	color: red;
+	font-size: 16px;
+	text-align: center;
+	margin-top: -20px;
+	display: none;
+	
+}
+
+#warning-bottom{
+	display:none;
+	font-family: 'Roboto Mono', monospace;
+	color: darkred;
+	font-size: 18px;
+	
+}
+
+#warning-top{
+	display:none;
+	font-family: 'Roboto Mono', monospace;
+	color: darkred;
+	font-size: 18px;
+	
+}
+
+#rough-text {
+	position: absolute;
+	top:78px;
+	left: 210px;
+	color: wblack;
+	width: 170px;
+}
+
+#max-trim-bottom {
+	height:5px;
+	width:98px;
+	border-top: dashed 1px;
+	position: absolute;
+	bottom: 0px;
+}
+
+#maxtrim-bottom-text {
+	color: darkred;
+	font-family: 'Roboto Mono', monospace;
+	font-size: 12px;
+	position: absolute;
+	bottom: -4px;
+	left: -50px;
+	
+}
+
+#max-trim-top {
+	/*======================fix later==========================*/
+	height:5px;
+	width:98px;
+	border-top: dashed 1px;
+	position: absolute;
+	margin-top:9px;
+}
+
+#maxtrim-bottom-top {
+	color: darkred;
+	font-family: 'Roboto Mono', monospace;
+	font-size: 12px;
+	position: absolute;
+	margin-top:6px;
+	left: -50px;
+	
+}
+
+#description {
+	color: white;
+	font-family: 'Roboto Mono', monospace;
+	font-size: 24px;
+	text-align: center;
+}
