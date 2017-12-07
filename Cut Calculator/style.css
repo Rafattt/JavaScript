@@ -1,18 +1,16 @@
 body, html {
-	background-color: black;
+	background-color: rgb(6,103,208);
+	
 }
 
 .container {
-/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#88bfe8+0,70b0e0+100;Blue+3D+%2317 */
-background: #88bfe8; /* Old browsers */
-background: -moz-linear-gradient(top, #88bfe8 0%, #70b0e0 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top, #88bfe8 0%,#70b0e0 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom, #88bfe8 0%,#70b0e0 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#88bfe8', endColorstr='#70b0e0',GradientType=0 ); /* IE6-9 */
-	margin-top: 20px;-webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
-	
+	background-color: #579ae2;
+	margin-top: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;	
+	border: white solid 10px;
+	min-width:1170px!important;
 	
 }
 
@@ -35,43 +33,43 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#88bfe8', end
 .first-row {
 	background-color: white;
 	height: 200px;
-	margin-top: 0px;-webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
-
-	
+	margin-top: 0px;
+	border: 1px solid;
 }
 
 #logo {
 	margin-top: 10px;
-	
 }
 
 #cut-title {
 	font-family: 'Roboto Mono', monospace;
-	font-size: 80px;
+	font-size: 99px;
 	color: #831e0c;
 	text-shadow: 4px 4px 2px rgba(150, 150, 150, 1);
 	position: absolute;
-	right: 600px;
+	right: 660px;
+	top: 42px;
 }
 
 #calculator-title {
 	font-family: 'Roboto Mono', monospace;
-	font-size: 80px;
+	font-size: 99px;
 	margin-bottom: 50px;
 	position: absolute;
-	top: 80px;
-	right: 130px;
+	top: 42px;
+	right: 80px;
 	color: #831e0c;
 	text-shadow: 4px 4px 2px rgba(150, 150, 150, 1);
+}
+
+.second-row{
+	border: 1px solid;
 }
 
 #door-container {
 	height: 340px;
 	margin-top:40px;
 	margin-bottom:40px;
-
 }
 
 #door {
@@ -83,10 +81,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#88bfe8', end
 	border: solid 1px;
 	margin-top:93px;
 	-webkit-transition: all .8s ease;
--moz-transition: all .8s ease;
--ms-transition: all .8s ease;
--o-transition: all .8s ease;
-transition: all .8s ease;
+	-moz-transition: all .8s ease;
+	-ms-transition: all .8s ease;
+	-o-transition: all .8s ease;
+	transition: all .8s ease;
 }
 
 #hole {
@@ -97,7 +95,6 @@ transition: all .8s ease;
 	position: absolute;
 	top: 235px;
 	left: 155px;
-	
 }
 
 #bottom-cut-draw {
@@ -106,11 +103,11 @@ transition: all .8s ease;
 	width: 98px;
 	position:absolute;
 	top: 359px;
-		-webkit-transition: all .8s ease;
--moz-transition: all .8s ease;
--ms-transition: all .8s ease;
--o-transition: all .8s ease;
-transition: all .8s ease;
+	-webkit-transition: all .8s ease;
+	-moz-transition: all .8s ease;
+	-ms-transition: all .8s ease;
+	-o-transition: all .8s ease;
+	transition: all .8s ease;
 }
 
 #top-cut-draw {
@@ -120,11 +117,11 @@ transition: all .8s ease;
 	position:absolute;
 	height: 0px;
 	margin-top: 0px;
-		-webkit-transition: all .8s ease;
--moz-transition: all .8s ease;
--ms-transition: all .8s ease;
--o-transition: all .8s ease;
-transition: all .8s ease;
+	-webkit-transition: all .8s ease;
+	-moz-transition: all .8s ease;
+	-ms-transition: all .8s ease;
+	-o-transition: all .8s ease;
+	transition: all .8s ease;
 }
 
 #door-height {
@@ -137,10 +134,10 @@ transition: all .8s ease;
 	border-color: red;
 	border-left: 0px;
 	-webkit-transition: all .8s ease;
--moz-transition: all .8s ease;
--ms-transition: all .8s ease;
--o-transition: all .8s ease;
-transition: all .8s ease;
+	-moz-transition: all .8s ease;
+	-ms-transition: all .8s ease;
+	-o-transition: all .8s ease;
+	transition: all .8s ease;
 }
 
 #height-center {
@@ -159,7 +156,6 @@ transition: all .8s ease;
 }
 
 #selectHeight {
-
 	font-size:24px;
 	font-family: 'Roboto Mono', monospace;
 }
@@ -169,26 +165,26 @@ transition: all .8s ease;
 }
 
 #bottom-text {
-
 	margin-top:10px;
+	margin-left: 95px;
 }
 
 #bottom {
 	position: absolute;
-	top:73px;
-	left:170px;
+	top:140px;
+	left:265px;
 	width:50px;
 }
 
 #top-text {
-
 	margin-top:10px;
+	margin-left: 95px;
 }
 
 #top {
 	position: absolute;
-	top:119px;
-	left:130px;
+	top:179px;
+	left:225px;
 	width:50px;
 	pointer-events: none;
 	background-color: lightgrey;
@@ -196,14 +192,14 @@ transition: all .8s ease;
 
 #checkBox {
 	position: absolute;
-	top:79px;
-	left: 230px;
+	top:179px;
+	left: 285px;
 }
 
 #checkbox-text {
 	position: absolute;
-	top:79px;
-	left: 250px;
+	top:179px;
+	left: 300px;
 	color: black;
 }
 
@@ -220,10 +216,23 @@ transition: all .8s ease;
 	text-align: center;
 	font-family: 'Roboto Mono', monospace;
 	color: darkred;
+	pointer-events: none;
+}
+
+#net-text{
+	margin-left: 12px;
+}
+
+#net-frame {
+	width:300px;
+	height: 40px;
+	pointer-events: none;
+	font-family: 'Roboto Mono', monospace;
+	font-size:32px;
+	text-align: center;
 }
 
 #cut-text-bottom {
-
 	font-family: 'Roboto Mono', monospace;
 	color: red;
 	font-size: 16px;
@@ -233,14 +242,12 @@ transition: all .8s ease;
 }
 
 #cut-text-top {
-
 	font-family: 'Roboto Mono', monospace;
 	color: red;
 	font-size: 16px;
 	text-align: center;
 	margin-top: -20px;
 	display: none;
-	
 }
 
 #warning-bottom{
@@ -248,7 +255,6 @@ transition: all .8s ease;
 	font-family: 'Roboto Mono', monospace;
 	color: darkred;
 	font-size: 18px;
-	
 }
 
 #warning-top{
@@ -256,17 +262,37 @@ transition: all .8s ease;
 	font-family: 'Roboto Mono', monospace;
 	color: darkred;
 	font-size: 18px;
-	
 }
 
 #rough-text {
 	position: absolute;
 	top:78px;
 	left: 210px;
-	color: wblack;
+	color: black;
 	width: 170px;
 }
 
+#rough-title-text{
+	font-size: 34px;
+	margin-top:50px;
+	margin-left:30px;
+	width: 400px;
+}
+
+#rough-size {
+	width: 50px;
+	float:left;
+	margin-left: 95px;
+}
+
+#inches {
+	float:left;
+	margin-left: 5px;
+	margin-right: 5px;
+	font-family: 'Roboto Mono', monospace;
+	color: black;
+	font-size:18px;
+}
 #max-trim-bottom {
 	height:5px;
 	width:98px;
@@ -282,7 +308,6 @@ transition: all .8s ease;
 	position: absolute;
 	bottom: -4px;
 	left: -50px;
-	
 }
 
 #max-trim-top {
@@ -301,7 +326,6 @@ transition: all .8s ease;
 	position: absolute;
 	margin-top:6px;
 	left: -50px;
-	
 }
 
 #description {
@@ -309,4 +333,5 @@ transition: all .8s ease;
 	font-family: 'Roboto Mono', monospace;
 	font-size: 24px;
 	text-align: center;
+
 }
