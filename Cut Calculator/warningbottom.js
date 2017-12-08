@@ -3,8 +3,14 @@ function warningBottom(bott, totalCut){
 		$('#warning-bottom').css('display','none');
 		let finFrac = new Fraction(getHeight()-(totalCut));	
 		$('#final').val(finFrac.toFraction(true)+'\"');
-		let frac = new Fraction(getHeight()-(totalCut)+1.75);		
-		$('#net-frame').val(frac.toFraction(true)+'\"');
+		let net = $('#rough-size').val();
+		net = parseFloat(net);
+		net = net -0.25;
+		
+		let frac = new Fraction(net);	
+		frac = frac.toFraction(true);
+		frac = frac.replace(" ", "-");
+		$('#net-frame').val(frac+'\"');
 		
 	} else if (bott == 0 || bott == "") {
 		$('#final').val("");
@@ -14,8 +20,14 @@ function warningBottom(bott, totalCut){
 		$('#warning-bottom').css('display','block');
 		let finFrac = new Fraction(getHeight()-(totalCut));	
 		$('#final').val(finFrac.toFraction(true)+'\"');
-		let frac = new Fraction(getHeight()-(totalCut)+1.75);		
-		$('#net-frame').val(frac.toFraction(true)+'\"');
+		let net = $('#rough-size').val();
+		net = parseFloat(net);
+		net = net -0.25;
+		
+		let frac = new Fraction(net);		
+		frac = frac.toFraction(true);
+		frac = frac.replace(" ", "-");
+		$('#net-frame').val(frac+'\"');
 	} else if(bott<7) {
 		$('#warning-bottom').css('display','none');
 	}

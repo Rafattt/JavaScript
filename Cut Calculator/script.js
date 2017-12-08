@@ -1,3 +1,7 @@
+/*
+Darpet Cut Calculator 1.0
+Author: Rafal Kmiecik
+*/
 let roughOpeningSize = 0;
 function getHeight(){ //getting height (in inches) of rough opening and choosing slab height to cut (one size bigger than RO sizes)
 		let heightTemp = 0;
@@ -63,11 +67,6 @@ $(document).ready(function(){
 		let t = setTimeout(setHeight, 500);
 	};
 	
-	function netFrame(){
-	
-		
-	
-	}
 	
 	
 });

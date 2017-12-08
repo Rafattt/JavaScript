@@ -1,7 +1,17 @@
 function description(top, bott){
 	if(top == 0 || top == ""){
-		$('#description').html('Cut top 0\", cut bottom '+bott+'\" Lock 36\"');
+		let frac = new Fraction(bott);
+		frac = frac.toFraction(true);
+		frac = frac.replace(" ", "-");
+		$('#description').html('Cut top 0\", cut bottom '+frac+'\" Lock 36\"');
 	} else {
-		$('#description').html('Cut top '+top+'\", cut bottom '+bott+'\" Lock 36\"');
+		
+		let frac = new Fraction(bott);
+		frac = frac.toFraction(true);
+		frac = frac.replace(" ", "-");
+		let fracTop = new Fraction(top);
+		fracTop = fracTop.toFraction(true);
+		fracTop = fracTop.replace(" ", "-");
+		$('#description').html('Cut top '+fracTop+'\", cut bottom '+frac+'\" Lock 36\"');
 	}
 }

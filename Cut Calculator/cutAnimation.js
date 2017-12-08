@@ -11,14 +11,22 @@ function cutAnimation(bott, top){
 		
 	if(bott>0 && roughOpeningSize && roughOpeningSize !==""){
 		$('#cut-text-bottom').css('display','block');
-		$('#cut-text-bottom').html((bott*3)/10);
+		let bottF = parseFloat((bott*3)/10);
+		bottF = new Fraction(bottF);
+		bottF = bottF.toFraction(true);
+		bottF = bottF.replace(" ", "-");
+		$('#cut-text-bottom').html(bottF);
 	} else if (bott<=0 || bott ==""){
 		$('#cut-text-bottom').css('display','none');
 	}
 		
 	if(top>0){
 		$('#cut-text-top').css('display','block');
-		$('#cut-text-top').html((top*3)/10);
+		let topF = parseFloat((top*3)/10);
+		topF = new Fraction(topF);
+		topF = topF.toFraction(true);
+		topF = topF.replace(" ", "-");
+		$('#cut-text-top').html(topF);
 	} else if (top<=0 || top ==""){
 		$('#cut-text-top').css('display','none');
 	}

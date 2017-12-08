@@ -5,7 +5,12 @@ function cut(){
 	
 	if(roughOpeningSize>0 && roughOpeningSize!==""){ //if RO field is not blank setting bottom cut as slab height - (ro-2)- top trim
 		bott = (getHeight()-(roughOpeningSize-2))-top;
-		$('#bottom').val(bott); //displaying bottom cut number
+		let bottF = parseFloat(bott);
+		bottF = new Fraction(bottF);
+		bottF = bottF.toFraction(true);
+		bottF = bottF.replace(" ", "-");
+		
+		$('#bottom').val(bottF); //displaying bottom cut number
 	} else if (roughOpeningSize === 0) {
 		bott = 0;
 		$('#bottom').val(bott);
@@ -14,7 +19,7 @@ function cut(){
 	}
 		
 	if($('#top').val()!== 0 && $('#top').val() !== ""){ //if top trim field is not blank setting totalCut value as bottom+top cuts
-		totalCut = parseInt(bott)+parseInt(top); //changing string to int to prevent printing "NaN"
+		totalCut = parseFloat(bott)+parseFloat(top); //changing string to int to prevent printing "NaN"
 	} else {
 		totalCut = bott+top;
 	}
