@@ -3,7 +3,7 @@ function description(top, bott){
 		let frac = new Fraction(bott);
 		frac = frac.toFraction(true);
 		frac = frac.replace(" ", "-");
-		$('#description').html('Cut top 0\", cut bottom '+frac+'\" Lock 36\"');
+		$('#description').val('Cut top 0\", cut bottom '+frac+'\", Lock 36\"');
 	} else {
 		
 		let frac = new Fraction(bott);
@@ -12,6 +12,6 @@ function description(top, bott){
 		let fracTop = new Fraction(top);
 		fracTop = fracTop.toFraction(true);
 		fracTop = fracTop.replace(" ", "-");
-		$('#description').html('Cut top '+fracTop+'\", cut bottom '+frac+'\" Lock 36\"');
+		$('#description').val('Cut top '+fracTop+'\", cut bottom '+frac+'\", Lock 36\"');
 	}
 }
