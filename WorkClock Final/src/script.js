@@ -1,0 +1,109 @@
+let startTime2 = "";
+let startTimeInput = "";
+let timeElapsed = "";
+let expectedEndTime = "";
+let expectedEndTimeTest = "16:40:00";
+let hourRate = "";
+let tax = "";
+let currentDate = "";
+let currentTime = "";
+$( document ).ready(function() {
+    
+    $('#ok-button').click(function(){
+        getUserData();
+        if(checkIfBlank() === true){
+            $('#input-box').css("display","none");
+           startTime = $('#start').val();
+           $('#time-start-numbers').html(startTimeInput+':00');
+        }
+    })
+
+    function getUserData(){
+        startTimeInput = $('#start').val();
+        expectedEndTime = $('#end').val();
+        hourRate = $('#rate').val();
+        tax = $('#tax').val();
+    }
+
+    $('#start, #end, #rate').blur(function(){
+        if(checkIfBlank() === true){
+            $('#ok-button').removeClass("disabled");
+            $('#ok-button').addClass("active");
+        }
+    });
+
+    function checkIfBlank(){
+        if($('#start').val() !== "" && $('#end').val() !== ""
+         && $('#rate').val() !== ""){
+             return true;
+         }
+    }
+
+    function setTimeFormat(timeUnit){
+        if(timeUnit<10){
+            let zero = '0';
+            timeUnit = zero.concat(timeUnit);
+        }
+        return timeUnit;
+    }
+
+    (function showCurrentTime(){
+        currentDate = new Date($.now());
+            currentTime = setTimeFormat(currentDate.getHours()) + ':' + setTimeFormat(currentDate.getMinutes()) + ':' +
+            setTimeFormat(currentDate.getSeconds());
+        $('#current-time-numbers').html(currentTime);
+        var t = setTimeout(showCurrentTime, 500);
+
+    })();
+
+    (function timeElapsedFunction(){
+        startTime = startTimeInput.split(":");
+        let currentTimeSplitted = currentTime.split(":");
+        let currentTimeMili = (currentTimeSplitted[0] * (60000 * 60))+(currentTimeSplitted[1] * 60000) + (currentTimeSplitted[2] * 1000);
+        let startTime2 =  (startTime[0] * (60000 * 60))+(startTime[1] * 60000);
+       
+
+        timeElapsed = currentTimeMili - startTime2;
+        let tempTime = timeElapsed;
+        
+        
+
+        $('#time-elapsed-numbers').html( msToTime(tempTime));
+        var t = setTimeout(timeElapsedFunction, 500);
+    })();
+
+    (function timeRemaining(){
+        let expectedEndTimeSplitted = expectedEndTime.split(":");
+        let expectedEndTimeMili = (expectedEndTimeSplitted[0] * (60000 * 60))+(expectedEndTimeSplitted[1] * 60000);
+        let currentTimeSplitted = currentTime.split(":");
+        let currentTimeMili = (currentTimeSplitted[0] * (60000 * 60))+(currentTimeSplitted[1] * 60000) + (currentTimeSplitted[2] * 1000);
+        let timeLeft = expectedEndTimeMili - currentTimeMili;
+        $('#time-left-numbers').html( msToTime(timeLeft));
+        var t = setTimeout(timeRemaining, 500);
+    })();
+
+    function msToTime(duration) {
+        var milliseconds = parseInt((duration%1000)/100)
+            , seconds = parseInt((duration/1000)%60)
+            , minutes = parseInt((duration/(1000*60))%60)
+            , hours = parseInt((duration/(1000*60*60))%24);
+    
+        hours = (hours < 10) ? "0" + hours : hours;
+        minutes = (minutes < 10) ? "0" + minutes : minutes;
+        seconds = (seconds < 10) ? "0" + seconds : seconds;
+    
+        return hours + ":" + minutes + ":" + seconds;
+    }
+
+    (function earnings(){
+        console.log(hourRate);
+        let earned = (Math.round(((hourRate/3600)*(timeElapsed/1000)) * 100) / 100).toFixed(2);
+        $('#money-earned-numbers').html(earned+'$');
+        var t = setTimeout(earnings, 500);
+    })();
+    
+
+});
+
+
+// USE THIS LATER - ALWAYS SHOW TWO DECIMAL PLACEES -    parseFloat(Math.round(num3 * 100) / 100).toFixed(2);

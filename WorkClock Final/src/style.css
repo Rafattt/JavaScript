@@ -1,0 +1,190 @@
+.container {
+    background-color: gray;
+}
+
+#title-box {
+    background-color: gray;
+    height: 100px;
+}
+
+#logo {
+    margin-top:5px;
+}
+
+#title {
+    color:black;
+    text-align: center;
+    font-family: 'Anton', sans-serif;
+    font-size: 54px;
+    text-align: left;
+    margin-top:-80px;
+    margin-left:110px;
+}
+
+#input-box {
+    display:block;
+    height: 500px;
+    width: 900px;
+    position:absolute;
+    margin-left:auto;
+    margin-right:auto;
+    left: 0;
+    right: 0;
+    top:20;
+    z-index:2;
+    background-color:rgb(164, 164, 182);
+}
+
+.input-titles {
+    text-align: center;
+    font-family: 'Anton', sans-serif;
+    font-size:24px;
+}
+
+.input {
+    text-align: center;
+    margin-left:363px;
+    margin-right:363px;
+    
+}
+
+#ok-button {
+    margin-left:433px;
+    margin-right:433px;
+    margin-top:30px;
+}
+
+#main {
+    background-color: rgb(250, 215, 222);
+    height: 600px;
+    width:100%;
+}
+
+#main-box {
+    background-color: bisque;
+    height:400px;
+    border: solid 1px;
+}
+
+#main-box-left {
+    background-color:#05264b;
+    height: 100%;
+    border: solid 2px black;
+   
+}
+
+#time-left {
+    height: 150px;
+    width:400px;
+    margin-top:100px;
+    font-size: 34px;
+
+}
+
+#time-left-header {
+    font-family: 'Anton', sans-serif;
+    font-size: 34px;
+    margin-left:10px;
+    text-align: left;
+    color: rgb(206, 206, 206);
+}
+
+#time-left-numbers {
+    font-family: 'Anton', sans-serif;
+    font-size: 104px;
+    line-height:100px;
+    text-align: center;
+    color: rgb(206, 206, 206);
+}
+
+#current-time {
+    height:70px; 
+}
+
+#times-info-box {
+
+    background-color: azure;
+}
+
+#current-time-header {
+    font-family: 'Anton', sans-serif;
+    font-size :18px;
+    margin-left: 5px;
+}
+
+#current-time-numbers {
+    font-family: 'Anton', sans-serif;
+    font-size: 44px;
+    line-height: 40px;
+    text-align: center;
+}
+
+
+#time-elapsed {
+    height:70px;
+}
+
+#time-elapsed-header {
+    font-family: 'Anton', sans-serif;
+    font-size :18px;
+    margin-left: 5px;
+}
+
+#time-elapsed-numbers {
+    font-family: 'Anton', sans-serif;
+    font-size: 44px;
+    line-height: 40px;
+    text-align: center;
+}
+
+#time-start {
+    height:70px;
+}
+
+#time-start-header {
+    font-family: 'Anton', sans-serif;
+    font-size :18px;
+    margin-left: 5px;
+}
+
+#time-start-numbers {
+    font-family: 'Anton', sans-serif;
+    font-size: 44px;
+    line-height: 40px;
+    text-align: center;
+}
+
+#main-box-right {
+    background-color: black;
+    height: 100%;
+    border: solid 2px black;
+}
+
+#money-earned {
+    height: 100px;
+    width:400px;
+    margin-top:100px;
+    font-size: 34px;
+
+}
+
+#money-earned-header {
+    font-family: 'Anton', sans-serif;
+    font-size: 34px;
+    margin-left:10px;
+    text-align: left;
+    color: rgb(206, 206, 206);
+}
+
+#money-earned-numbers {
+    font-family: 'Anton', sans-serif;
+    font-size: 104px;
+    line-height:100px;
+    text-align: center;
+    color: rgb(238, 223, 13);
+}
+
+#menu{
+    background-color: blueviolet;
+    height: 50px;
+}
