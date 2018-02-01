@@ -2,27 +2,33 @@ let startTime2 = "";
 let startTimeInput = "";
 let timeElapsed = "";
 let expectedEndTime = "";
-let expectedEndTimeTest = "16:40:00";
-let hourRate = "";
+let expectedEndTimeTest = ":00";
+let hourRate = "19";
 let tax = "";
 let currentDate = "";
 let currentTime = "";
+let controlNumber = 0;
 $( document ).ready(function() {
     
     $('#ok-button').click(function(){
+        controlNumber = 1;
         getUserData();
         if(checkIfBlank() === true){
             $('#input-box').css("display","none");
            startTime = $('#start').val();
            $('#time-start-numbers').html(startTimeInput+':00');
+           
         }
     })
 
     function getUserData(){
-        startTimeInput = $('#start').val();
-        expectedEndTime = $('#end').val();
-        hourRate = $('#rate').val();
-        tax = $('#tax').val();
+        if(controlNumber === 1){
+            startTimeInput = $('#start').val();
+            expectedEndTime = $('#end').val();
+            hourRate = $('#rate').val();
+            tax = $('#tax').val();
+        }
+        
     }
 
     $('#start, #end, #rate').blur(function(){
@@ -51,34 +57,57 @@ $( document ).ready(function() {
         currentDate = new Date($.now());
             currentTime = setTimeFormat(currentDate.getHours()) + ':' + setTimeFormat(currentDate.getMinutes()) + ':' +
             setTimeFormat(currentDate.getSeconds());
-        $('#current-time-numbers').html(currentTime);
+                $('#current-time-numbers').html(currentTime);
+            
+       
         var t = setTimeout(showCurrentTime, 500);
 
     })();
 
     (function timeElapsedFunction(){
-        startTime = startTimeInput.split(":");
-        let currentTimeSplitted = currentTime.split(":");
-        let currentTimeMili = (currentTimeSplitted[0] * (60000 * 60))+(currentTimeSplitted[1] * 60000) + (currentTimeSplitted[2] * 1000);
-        let startTime2 =  (startTime[0] * (60000 * 60))+(startTime[1] * 60000);
+        if(controlNumber === 1){
+            startTime = startTimeInput.split(":");
+            let currentTimeSplitted = currentTime.split(":");
+            let currentTimeMili = (currentTimeSplitted[0] * (60000 * 60))+(currentTimeSplitted[1] * 60000) + (currentTimeSplitted[2] * 1000);
+            let startTime2 =  (startTime[0] * (60000 * 60))+(startTime[1] * 60000);
+           
+    
+            timeElapsed = currentTimeMili - startTime2;
+            let tempTime = timeElapsed;
+            
+            
+          
+            $('#time-elapsed-numbers').html( msToTime(tempTime));
+        }
        
-
-        timeElapsed = currentTimeMili - startTime2;
-        let tempTime = timeElapsed;
-        
-        
-
-        $('#time-elapsed-numbers').html( msToTime(tempTime));
         var t = setTimeout(timeElapsedFunction, 500);
     })();
 
     (function timeRemaining(){
-        let expectedEndTimeSplitted = expectedEndTime.split(":");
-        let expectedEndTimeMili = (expectedEndTimeSplitted[0] * (60000 * 60))+(expectedEndTimeSplitted[1] * 60000);
-        let currentTimeSplitted = currentTime.split(":");
-        let currentTimeMili = (currentTimeSplitted[0] * (60000 * 60))+(currentTimeSplitted[1] * 60000) + (currentTimeSplitted[2] * 1000);
-        let timeLeft = expectedEndTimeMili - currentTimeMili;
-        $('#time-left-numbers').html( msToTime(timeLeft));
+        if(controlNumber === 1){
+            let expectedEndTimeSplitted = expectedEndTime.split(":");
+            let expectedEndTimeMili = (expectedEndTimeSplitted[0] * (60000 * 60))+(expectedEndTimeSplitted[1] * 60000);
+            let currentTimeSplitted = currentTime.split(":");
+            let currentTimeMili = (currentTimeSplitted[0] * (60000 * 60))+(currentTimeSplitted[1] * 60000) + (currentTimeSplitted[2] * 1000);
+            let timeLeft = expectedEndTimeMili - currentTimeMili;
+            $('#time-left-numbers').html( msToTime(timeLeft));
+    //progress bar starts here
+    let startTime2 =  (startTime[0] * (60000 * 60))+(startTime[1] * 60000);
+    let progressBarWidthZero = expectedEndTimeMili - startTime2;
+    let progressBarWidthHundred = 0;
+    let progressBarWidthCurrent = "";
+    // count percent :timeElapsed/(progressBarWidthZero/100)
+    
+    let currentPercent = parseInt(timeElapsed/(progressBarWidthZero/100));
+    $('#progress').css('width', currentPercent+'%');
+    console.log('expectedEndTimeMili '+expectedEndTimeMili);
+    console.log('percent '+currentPercent);
+    console.log('startTime2 '+ startTime2);
+    console.log(progressBarWidthZero);
+    //progress bar ends here
+        }
+      
+
         var t = setTimeout(timeRemaining, 500);
     })();
 
@@ -101,6 +130,8 @@ $( document ).ready(function() {
         $('#money-earned-numbers').html(earned+'$');
         var t = setTimeout(earnings, 500);
     })();
+
+
     
 
 });

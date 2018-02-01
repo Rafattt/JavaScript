@@ -23,8 +23,8 @@
 
 #input-box {
     display:block;
-    height: 500px;
-    width: 900px;
+    height: 300px;
+    width: 400px;
     position:absolute;
     margin-left:auto;
     margin-right:auto;
@@ -33,6 +33,13 @@
     top:20;
     z-index:2;
     background-color:rgb(164, 164, 182);
+    border-radius: 10px 10px 10px 10px;
+-moz-border-radius: 10px 10px 10px 10px;
+-webkit-border-radius: 10px 10px 10px 10px;
+border: 0px solid #000000;
+-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
 
 .input-titles {
@@ -43,15 +50,14 @@
 
 .input {
     text-align: center;
-    margin-left:363px;
-    margin-right:363px;
+    margin-left:113px;
+
     
 }
 
 #ok-button {
-    margin-left:433px;
-    margin-right:433px;
-    margin-top:30px;
+    margin-left:173px;
+    margin-top:15px;
 }
 
 #main {
@@ -62,7 +68,7 @@
 
 #main-box {
     background-color: bisque;
-    height:400px;
+    height:430px;
     border: solid 1px;
 }
 
@@ -183,6 +189,63 @@
     text-align: center;
     color: rgb(238, 223, 13);
 }
+
+#progress-box {
+    height:90px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:10px;
+    width:582px;
+   
+}
+
+#progress-header{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+}
+
+#progress-bar {
+    height:40px;
+    width:582px;
+    border: solid 1px black; 
+    background-color: rgba(220,218,218,0.1) ;
+    
+}
+
+#progress{
+    height:100%;
+    width:0%;
+    background-color: green;
+}
+
+#fifty-percent-line{
+    width:290px;
+    border-right: 1px dotted black;
+    height:100%;
+    margin-top:-38px;
+    opacity: 0.5;
+    z-index:2;
+}
+
+#zerop {
+    float:left;
+    color: white;
+}
+
+#fiftyp{
+    margin-left: 255px;
+    float:left;
+    color: white;
+}
+
+#hundredp{
+    margin-left: 542px;
+    color: white;
+}
+
+
 
 #menu{
     background-color: blueviolet;
