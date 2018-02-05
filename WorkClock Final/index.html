@@ -26,9 +26,9 @@
                 </div>
             </header>
             <div id="input-box">
-                <div id="start-title" class="input-titles">Enter start time</div>
+                <div id="start-title" class="input-titles">Enter start time (use <span style="color:red;">HH:MM</span> format)</div>
                 <input class="input" type="text" id="start" >
-                <div id="end-time" class="input-titles">Enter expected end time</div>
+                <div id="end-time" class="input-titles">Enter expected end time (use <span style="color:red;">HH:MM</span> format)</div>
                 <input class="input" type="text" id="end">
                 <div id="hour-rate" class="input-titles">Enter hour rate</div>
                 <input class="input" type="text" id="rate">
@@ -74,7 +74,24 @@
                             <div id="money-earned">
                                     <div id="money-earned-header">Money earned:</div>
                                     <div id="money-earned-numbers">00.00$</div>
+                            </div>
+                            <div id="tax-info-box" class="row">
+                                <div id="tax">
+                                    <div id="tax-header">Tax:</div>
+                                    <div id="tax-numbers">00.00$</div>
                                 </div>
+                                <div id="gross">
+                                    <div id="gross-header">Gross:</div>
+                                    <div id="gross-numbers">00.00$</div>
+                                </div>
+                            </div>
+                            <div id="lunch-box">
+                                <div id="lunch-header">Did you take your lunch?*</div>
+                                <div id="lunch-radio-box">
+                                    <input type="radio" name="lunch" id="lunch-yes" value="Yes">Yes
+                                    <input type="radio" id="lunch-no" name="lunch" value="No" checked>No
+                                </div>
+                            </div>
                     </div>
                    
                 </div>

@@ -24,14 +24,15 @@
 #input-box {
     display:block;
     height: 300px;
-    width: 400px;
+    width: 500px;
     position:absolute;
     margin-left:auto;
     margin-right:auto;
     left: 0;
     right: 0;
-    top:20;
+    top:130px;
     z-index:2;
+    border: solid 2px black;
     background-color:rgb(164, 164, 182);
     border-radius: 10px 10px 10px 10px;
 -moz-border-radius: 10px 10px 10px 10px;
@@ -50,13 +51,13 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 
 .input {
     text-align: center;
-    margin-left:113px;
+    margin-left:163px;
 
     
 }
 
 #ok-button {
-    margin-left:173px;
+    margin-left:223px;
     margin-top:15px;
 }
 
@@ -188,6 +189,63 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     line-height:100px;
     text-align: center;
     color: rgb(238, 223, 13);
+}
+
+#tax-info-box {
+    margin-top:50px;
+    height:70px;
+    background-color: azure;
+}
+
+#tax{
+    float:left;
+}
+
+#tax-header {
+    font-family: 'Anton', sans-serif;
+    font-size :18px;
+    margin-left: 5px;
+}
+
+#tax-numbers {
+    font-family: 'Anton', sans-serif;
+    color:darkred;
+    font-size: 44px;
+    margin-left:40px;
+    line-height: 40px;
+    text-align: center;
+}
+
+#gross-header {
+    font-family: 'Anton', sans-serif;
+    font-size :18px;
+    margin-left: 245px;
+}
+
+#gross-numbers {
+    font-family: 'Anton', sans-serif;
+    font-size: 44px;
+    line-height: 40px;
+    margin-left: 225px;
+    text-align: center;
+}
+
+#lunch-box{
+
+    margin-top:35px;
+}
+
+#lunch-header{
+    font-family: 'Anton', sans-serif;
+    font-size :18px;
+    text-align: center;
+    color:white;
+}
+
+#lunch-radio-box{
+    text-align: center;
+    font-family: 'Anton', sans-serif;
+    color:white;
 }
 
 #progress-box {

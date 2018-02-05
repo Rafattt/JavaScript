@@ -26,7 +26,10 @@ $( document ).ready(function() {
             startTimeInput = $('#start').val();
             expectedEndTime = $('#end').val();
             hourRate = $('#rate').val();
-            tax = $('#tax').val();
+            if(($('#tax').val())!==""){
+                tax = $('#tax').val();
+            }
+            
         }
         
     }
@@ -125,10 +128,25 @@ $( document ).ready(function() {
     }
 
     (function earnings(){
-        console.log(hourRate);
+        
         let earned = (Math.round(((hourRate/3600)*(timeElapsed/1000)) * 100) / 100).toFixed(2);
-        $('#money-earned-numbers').html(earned+'$');
+        if(($("#lunch-yes").prop("checked"))=== true){
+            earned = earned - hourRate/2;
+            earned = earned.toFixed(2);
+        } 
+        let taxDeduct = (earned/100)*tax;
+        taxDeduct = taxDeduct.toFixed(2);
+        let realEarned = earned-taxDeduct;
+        realEarned = realEarned.toFixed(2);
+       
+        $('#money-earned-numbers').html(realEarned+'$');
+        if(tax!==""){
+            $('#tax-numbers').html(taxDeduct+'$');
+            $('#gross-numbers').html(earned+'$');
+        }
+       
         var t = setTimeout(earnings, 500);
+        
     })();
 
 
