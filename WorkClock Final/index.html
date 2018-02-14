@@ -11,6 +11,7 @@
         <link href="https://fonts.googleapis.com/css?family=Anton|Open+Sans" rel="stylesheet">
         <script src="src/jquery/dist/jquery.min.js"></script>
         <script src="src/script.js"></script>
+        <script src="src/time.js"></script>
     </head>
 
     <body>
@@ -26,15 +27,20 @@
                 </div>
             </header>
             <div id="input-box">
-                <div id="start-title" class="input-titles">Enter start time (use <span style="color:red;">HH:MM</span> format)</div>
+                <div id="start-title" class="input-titles">Enter start time (use <span style="color:red;">HH:MM</span> 24h format)</div>
                 <input class="input" type="text" id="start" >
-                <div id="end-time" class="input-titles">Enter expected end time (use <span style="color:red;">HH:MM</span> format)</div>
+                <div class="incorrect" id="start-time-incorrect">Incorrect format</div>
+                <div id="end-time" class="input-titles">Enter expected end time (use <span style="color:red;">HH:MM</span> 24h format)</div>
                 <input class="input" type="text" id="end">
+                <div class="incorrect" id="end-time-incorrect">Incorrect format</div>
                 <div id="hour-rate" class="input-titles">Enter hour rate</div>
                 <input class="input" type="text" id="rate">
+                <div class="incorrect"  id="rate-incorrect">Incorrect format</div>
                 <div id="tax-total" class="input-titles">Enter % of total tax deduction*</div>
                 <input class="input" type="text" id="tax">
+                <div class="incorrect"  id="tax-incorrect">Incorrect format</div>
                 <button id="ok-button" type="button" class="btn btn-primary disabled">Ok</button>
+                <div id="tax-info">*If you leave it blank it will be calculated as tax free</div>
             </div>
             <div id="main">
                 <div id="main-box" class="row">
@@ -92,12 +98,14 @@
                                     <input type="radio" id="lunch-no" name="lunch" value="No" checked>No
                                 </div>
                             </div>
+                            <div id="lunch-info">*This option substracts money for 30 minutes of work.</div>
                     </div>
                    
                 </div>
                 <div class="row" id="menu">
-                
-                    </div>
+                    <div id="data-edit" class="menu-button">Edit Data</div>
+                    <div class="menu-button">Save</div>
+                </div>
             </div>
             
         </div>
