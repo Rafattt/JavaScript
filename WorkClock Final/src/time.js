@@ -44,8 +44,17 @@ function setTimeFormat(timeUnit){ //if time unit is smaller than 10 this functio
             }else{
                 timeLeft = expectedEndTimeMili - currentTimeMili;
             }
-           
-            $('#time-left-numbers').html( msToTime(timeLeft));
+           if(timeLeft>0){
+                $('#time-left-numbers').html( msToTime(timeLeft));
+           }else{
+                $('#time-left-numbers').html('00:00:00');
+                $('#time-left-numbers').css('color','red');
+                setInterval(function(){
+                    $("#time-left-numbers").fadeOut(500);
+                    $("#time-left-numbers").fadeIn(500);
+                 },1000)
+           }
+            
     //progress bar starts here
     let startTime2 =  (startTime[0] * (60000 * 60))+(startTime[1] * 60000);
    
@@ -60,9 +69,14 @@ function setTimeFormat(timeUnit){ //if time unit is smaller than 10 this functio
    
     let progressBarWidthHundred = 0;
     let progressBarWidthCurrent = "";
-    // count percent :timeElapsed/(progressBarWidthZero/100)
+    if(currentTimeMili< expectedEndTimeMili){ //calculating width of proggress bar while current time is smaller than ending time
+        currentPercent = parseInt(timeElapsed/(progressBarWidthZero/100));// calculating how much time of work elapsed (in percents)
+    }else{
+        currentPercent = 100;
+        $('#progress').css('background-color', 'red');
+        
+    }
     
-    let currentPercent = parseInt(timeElapsed/(progressBarWidthZero/100));
     $('#progress').css('width', currentPercent+'%');
     //progress bar ends here
         }

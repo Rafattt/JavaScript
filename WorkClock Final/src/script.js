@@ -10,6 +10,7 @@ let currentTime = ""; // currentDate converted to hh:mm:ss format
 let validArray = [0,0,0];
 let controlNumber = 0; // 0 if data wasn't entered 1 if data was entered, determines if starts "timeRemaining" and "timeElapsed" function
 let progressBarWidthZero = "";
+let currentPercent = 0;
 const midnight = 86400000; //midnight (24:00) in miliseconds, needed for calcuating hours between two days
     
 $( document ).ready(function() {
@@ -93,5 +94,6 @@ $( document ).ready(function() {
             return true;
         }
     }
+
 
 });
