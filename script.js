@@ -1,223 +1,47 @@
-$(document).ready(function (){
-	'use strict';
-	var playerOneSymbol = "";	//variable for storing X or O for player one
-	var playerTwoSymbol = "";	//variable for storing X or O for player two
-	var numberOfPlayers = "";
-	var controlNumber = 0;	//checking whose turn is it
-	var fieldsClicked = 0;	//counting how mony fields has ben clicked, 9 is max and if nobody wins before it is a draw
-	var playerOneFields = [];	//array for storing names of field marked by player one
-	var playerTwoFields = [];	//array for storing names of field marked by player two
-	var result = "";
-	var winConditions = [	//cominations of wining fields
-		["a1","a2","a3"],
-		["a1","b1","c1"],
-		["a1","b2","c3"],
-		["b1","b2","b3"],
-		["c1","b2","a3"],
-		["a2","b2","c2"],
-		["a3","b3","c3"],
-		["c1","c2","c3"]
-	];
-	var combinedResults =[];
-	var emptyFields = ["a1","a2","a3","b1","b2","b3","c1","c2","c3"];
-		// PROGRAM STARTS HERE
-		game;
-		
-		function singlePlayerGame(){
-			for(var i = 0; i<emptyFields.length; i++){
-				$("#"+emptyFields[i]).html("");
-				$('#'+emptyFields[i]).css('pointer-events', 'auto');
-			}
-			$("#number-of-players-box").css('display','none');
-			$("#choose-symbol-box").css('display','block');
-			console.log("here");
-			symbolsMenu();
-			clickedFieldSinglePlayer();
-		}
-		
-		function twoPlayersGame(){	//multiplayer game
-			$("#number-of-players-box").css('display','none');
-			$("#choose-symbol-box").css('display','block');
-			symbolsMenu();
-			clickedField;
-		}
-		//playerMoves function writing player symbol on clicked field and making this field inactive
-		function playerMoves(player, symbol, control, playerNumber, field){
-			$('#'+field).html(symbol);
-			var lastSymbol = field;
-			$('#'+field).css('pointer-events', 'none');
-			console.log("here");
-			player.push(field);
-			controlNumber = control;	//changing control number to signalize that turn is over
+/*
+Darpet Cut Calculator 1.1
+Author: Rafal Kmiecik 
+rafalkmiecik@gmail.com
+*/
+
+
+let variables = {
+	roughOpeningSize: 0,
+	roughSize: getRoughSize =>  document.getElementById("rough-size").value, //geting value from input field 
+	roughSizeValue: getRoughSizeValue =>  parseFloat(document.getElementById("rough-size").value),//geting value from input field and converting it to floats
 			
-			for(let i = 0; i < 8;i++){ //checking if winConditions and player(One/Two)Field have common elements
-				
-				var res = winConditions[i].filter(function(v){
-					return player.indexOf(v) > -1;
-				});
-				if(res.length === 3){ //if all 3 elements from winConditions array are in player(One/Two)Field player wins
-					for(let i = 0; i<=emptyFields.length; i++){
-						$('#'+emptyFields[i]).css('pointer-events', 'none');
-					}
-					$("#player-one-win").css('display','block');
-						setTimeout(function() {
-							$("#player-one-win").css('display','none');
-							restart();
-						}, 2000);
-					
-					result = "win";
-					
-					
+		 
+	submitButton: document.getElementById("sub"),
+	slab: 0, //default height of slab
 	
-					res = "";
-					
-				} 
-			}
-		}
-		
-	function symbolsMenu(){ //choosing symbol 'X' or 'O'
-		$('.symbols').click(function(event){
-		playerOneSymbol = event.target.id;
-		
-		if(playerOneSymbol == "X"){
-					playerTwoSymbol = "O";
-					} else if(playerOneSymbol == "O"){
-						playerTwoSymbol = "X";
-					}
-		$("#choose-symbol-box").css('display','none');
-		$(".fields").css('border','1px solid white');
-	});
-	}
-	
-	var game = $('.players').click(function(event){	//
-		numberOfPlayers = event.target.id;
-		
-		if(numberOfPlayers === 'one-player'){
-			singlePlayerGame();
-		} else if(numberOfPlayers === 'two-players'){
-			console.log("2 players");
-			twoPlayersGame();
-		}
-	});
-	
-	var clickedField = $('.fields').click(function(event){	//checking which field was clicked and getting id of this field
-		var field = event.target.id;
-			
-		if(controlNumber === 0){
-			playerMoves(playerOneFields, playerOneSymbol, 1, "One", field);
-			console.log("playerOneMoves");
-		} else if(controlNumber === 1){
-			playerMoves(playerTwoFields, playerTwoSymbol, 0, "Two", field);
-			console.log("playerTwoMoves");
-		}
-		fieldsClicked++;	//increment number of field clicked
-	
-		if(fieldsClicked === 9 && result !="win"){	//if nobody wins and all field (9) has been clicked it is draw
-			
-			$("#draw").css('display','block');
-						setTimeout(function() {
-							$("#draw").css('display','none');
-							restart();
-						}, 2000);
-						
-						restart();
-					$('#'+lastField).html("");
-					res = "";
-		}
-	});
-	
-	function clickedFieldSinglePlayer(){
-	$('.fields').click(function(event){	//checking which field was clicked and getting id of this field
-	console.log("clickedFieldSinglePlayer");
-		var field = event.target.id;
-			
-		if(controlNumber === 0){
-			
-			playerMoves(playerOneFields, playerOneSymbol, 1, "One", field);
-			console.log("playerOneMoves");
-		} else if(controlNumber === 1 && result !== "win"){
-			setTimeout(function() {
-			combinedResults = playerOneFields.concat(playerTwoFields);
-			do{
-			var ran = Math.floor((Math.random() * (8)) + 0);
-			var ran2 = Math.floor((Math.random() * (2)) + 0);
-			var ff = winConditions[ran][ran2];
-			if(combinedResults.indexOf(ff) == -1){
-			$('#'+ff).html(playerTwoSymbol);
-			console.log(ff);
-			$('#'+ff).css('pointer-events', 'none');
-			console.log("here");
-			playerTwoFields.push(ff);
-			console.log("playerTwoFields "+playerTwoFields);
+}
+
+let app = {
+	clickByEnter: clickEnter = () => { //function that allows using "enter" key instead of submit button
+		document.getElementById("rough-size")
+    		.addEventListener("keyup", function(event) {
+    		event.preventDefault();
+    	if (event.keyCode === 13) {
+        	document.getElementById("sub").click();
+    	}
+		});
+	},
+	slabHeight: getHeight = () => {//getting height (in inches) of rough opening and choosing slab height to cut (one size bigger than RO sizes)
+		document.getElementById("sub").onclick = () => { //starts when user clicks on submit button
+			//console.log(parseFloat(document.getElementById("rough-size").value));
+			variables.roughSizeValue = parseFloat(document.getElementById("rough-size").value);
+			console.log("variables.roughSizeValue "+variables.roughSizeValue);
+			console.log("variables.roughSize "+variables.roughSize);
+			if(variables.roughSize !==0 && variables.roughSize !== ""){ //checks if user typed somethng into "#rough-size" field
+				roughOpeningSize = sizeConvertion.convert(variables.roughSize()); //converting "0-0" format to "0.0" format
+				console.log("11111 "+roughOpeningSize);
+				showSizeinFeets(); //function calculate inches to feet -inch
 			} else {
-				console.log(ff+" used");
+				console.log(document.getElementById("rough-size").value);
 			}
-			}while(combinedResults.indexOf(ff) != -1 && combinedResults.length<=8);
-			for(let i = 0; i < 8;i++){ //checking if winConditions and player(One/Two)Field have common elements
-				
-				var res = winConditions[i].filter(function(v){
-					return playerTwoFields.indexOf(v) > -1;
-				});
-				if(res.length === 3){ //if all 3 elements from winConditions array are in player(One/Two)Field player wins
-				for(let j = 0;j<9;j++){
-				$('#'+emptyFields[j]).css('pointer-events', 'none');
-				}
-					$("#player-two-win").css('display','block');
-						setTimeout(function() {
-							$("#player-two-win").css('display','none');
-							restart();
-						}, 2000);
-					result = "win";
-				} 
-			}
-			}, 500);
-			controlNumber = 0;
-		}
-		fieldsClicked++;	//increment number of field clicked
-		
-		if(fieldsClicked === 9 && result !="win"){	//if nobody wins and all field 990 has been clicked it is draw
-			
-			$("#draw").css('display','block');
-						setTimeout(function() {
-							$("#draw").css('display','none');
-						}, 2000);
-		}
-	});
+		}	
 	}
-	
-	function playerMovesCPU(player, symbol, control, playerNumber, field){
-			
-			
-			player.push(field);
-			controlNumber = control;	//changing control number to signalize that turn is over
-			
-			for(let i = 0; i < 8;i++){ //checking if winConditions and player(One/Two)Field have common elements
-				
-				var res = winConditions[i].filter(function(v){
-					return player.indexOf(v) > -1;
-				});
-				if(res.length === 3){ //if all 3 elements from winConditions array are in player(One/Two)Field player wins
-					document.write("Player "+playerNumber+" Win");
-					result = "win";
-				} 
-			}
-		}
-		
-		function restart(){
-			
-			result = "";
-			playerOneFields = [];	
-			playerTwoFields = [];
-			fieldsClicked = 0;	
-			controlNumber = 0;
-			combinedResults =[];
-			
-			for(var i = 0; i<=emptyFields.length; i++){
-				$("#"+emptyFields[i]).html("");
-				$('#'+emptyFields[i]).css('pointer-events', 'auto');
-			}
-			
-			
-		}
-	
-});
+}
+
+app.clickByEnter();
+getHeight();
